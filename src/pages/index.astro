@@ -18,7 +18,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'RS
           <input name="q" class="flex-1" placeholder="Search cinematic, attitude, cricket, Hindi song..." />
           <button class="btn-primary" type="submit">Search</button>
         </form>
-        <div class="mt-5 flex flex-wrap gap-2">{allTags.slice(0, 12).map((tag) => <a class="badge" href={`/tag/${tag}/`}>{tag}</a>)}</div>
+        <div class="mt-5 flex flex-wrap gap-2">{['cinematic','attitude','viral','couple','beat-sync','cricket','birthday','poster','travel','avatar','bike','lofi'].map((tag) => <a class="badge" href={`/tag/${tag}/`}>{tag}</a>)}</div>
       </div>
       <div class="card p-6">
         <div class="rounded-3xl bg-slate-900 p-5">

@@ -21,7 +21,7 @@ export const resources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a cinematic sunset boy style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Transform my uploaded photo into a cinematic sunset portrait. Place me standing on a rooftop or open field with a dramatic golden-orange sunset sky behind. Keep my face 100% realistic — same features, same skin tone, no AI distortion. Add warm golden hour side-lighting on my face, subtle lens flare from the sun, slight depth-of-field blur on the background, and a faint orange color grade across the whole image. My outfit should look stylish and modern. Composition: vertical 4:5, subject centered, sky taking up 40% of frame. Final output should look like a professional mobile photography shot, not AI-generated. Resolution: 2048x2560px minimum."
   },
   {
     "type": "prompt",
@@ -40,7 +40,7 @@ export const resources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a cinematic sunset girl style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Edit my uploaded photo into a soft golden hour girl portrait. Background: blurred city skyline or flower garden with warm sunset tones. Keep my face completely unchanged — same eyes, nose, lips, skin texture. Add soft diffused golden light wrapping around my hair and shoulders, gentle bokeh circles in the background, and a warm peachy-pink color palette. Hair should have natural golden highlights from the backlight. Composition: vertical 4:5, soft vignette edges, subject slightly off-center. Style reference: professional portrait photography with natural light. Output resolution: 2048x2560px, no watermark."
   },
   {
     "type": "prompt",
@@ -59,7 +59,7 @@ export const resources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a lofi dusk filter style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Apply a lofi dusk aesthetic to my uploaded photo. Color grading: muted purple-blue shadows, warm desaturated highlights, slight grain texture like analog film. Keep my face 100% unchanged and realistic. Background should have a dreamy soft-focus with purple-pink dusk sky tones bleeding through. Add subtle film grain (ISO 800 look), slightly lifted blacks, and a cool-to-warm split tone. The overall mood should feel nostalgic and calm, like a lo-fi music video thumbnail. Vertical 4:5 crop, centered subject. Output: high-res PNG, minimum 2048x2560px."
   },
   {
     "type": "prompt",
@@ -77,7 +77,7 @@ export const resources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a double exposure travel style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Create a double exposure effect combining my uploaded portrait with a travel landscape. My face and upper body silhouette should be clearly visible, with a mountain/ocean/city skyline scene blended inside the silhouette area. Keep my facial features 100% realistic where visible. Use a clean white or dark gradient background outside the silhouette. The landscape inside should have vibrant but not oversaturated colors — think teal water, green mountains, or warm city lights. Add a subtle light leak or gradient overlay where the portrait meets the landscape. Style: editorial magazine double exposure, not cheap Photoshop overlay. Vertical 4:5, high-res 2048x2560px output."
   },
   {
     "type": "prompt",
@@ -149,7 +149,7 @@ export const resources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a cute couple style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Edit my uploaded couple photo into a cute romantic portrait. Keep both faces 100% realistic and unchanged. Background: soft pastel bokeh (pink, peach, or lavender tones) or a dreamy garden/cafe setting. Add warm soft lighting that flatters both skin tones equally. Include subtle heart-shaped bokeh or fairy light effects in the background (tasteful, not overdone). Both subjects should have natural skin texture with gentle retouching. Color palette: warm and soft — think rose gold highlights, creamy skin tones. Composition: vertical 4:5, both faces clearly visible and well-lit. Style: professional couple photography, not cartoon or illustration. Output: 2048x2560px."
   },
   {
     "type": "prompt",
@@ -168,7 +168,7 @@ export const resources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a cricket stadium style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Place me in a packed cricket stadium scene. I should be standing in the foreground wearing a cricket jersey or casual sporty outfit, with a massive floodlit stadium behind me full of cheering fans. Keep my face 100% realistic and unchanged. Stadium should have bright white floodlights creating dramatic backlighting, green pitch visible, and colorful crowd in soft bokeh. Add slight lens flare from the stadium lights and a warm evening sky. The mood should feel like a World Cup final night match. Composition: vertical 4:5, me taking up lower 60% of frame, stadium filling the background. Output: photorealistic, 2048x2560px."
   },
   {
     "type": "prompt",
@@ -276,7 +276,7 @@ export const resources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a attitude boy style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Transform my uploaded photo into a dark attitude boy portrait. Background: pitch black or very dark urban wall with subtle smoke/fog effects. Keep my face completely realistic — no changes to features. Lighting: dramatic single-source side light (cool white or ice blue) hitting one side of my face, other side in deep shadow. Add a subtle rim light on hair/shoulders. My expression and pose should look confident and intense. Color grade: high contrast, desaturated with slight teal-orange split toning in shadows/highlights. Add very subtle particle/dust effects in the light beam. Vertical 4:5, cinematic aspect. Output: 2048x2560px, no text overlays."
   },
   {
     "type": "prompt",
