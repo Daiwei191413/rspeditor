@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+import { prompts } from '../../data/resources';
+---
+<BaseLayout title="Free AI Photo Editing Prompts for ChatGPT & Gemini | RSP Editor" description="Copy free AI photo editing prompts for ChatGPT, Gemini, Instagram DP, Reels covers, WhatsApp status, and viral portrait styles.">
+  <section class="container py-14"><span class="badge">Copy free</span><h1 class="mt-4 text-4xl font-black text-white md:text-5xl">AI Photo Editing Prompts</h1><p class="mt-4 max-w-2xl text-slate-300">Browse ready-to-use prompts for cinematic portraits, attitude edits, couple posters, cricket stadium looks, chibi cartoons, and more.</p></section>
+  <section class="container grid gap-6 md:grid-cols-2 lg:grid-cols-3">{prompts.map((resource) => <ResourceCard resource={resource} />)}</section>
+</BaseLayout>

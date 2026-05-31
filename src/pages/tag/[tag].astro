@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+import { allTags, resources } from '../../data/resources';
+export function getStaticPaths() { return allTags.map((tag) => ({ params: { tag }, props: { tag } })); }
+const { tag } = Astro.props;
+const items = resources.filter((item) => item.tags.includes(tag));
+const nice = tag.split('-').map((s) => s[0].toUpperCase() + s.slice(1)).join(' ');
+---
+<BaseLayout title={`${nice} Editing Resources | RSP Editor`} description={`Browse free ${nice} AI photo editing prompts and CapCut template guides for reels, shorts, and status edits.`}>
+  <section class="container py-14"><span class="badge">Tag</span><h1 class="mt-4 text-4xl font-black text-white md:text-5xl">{nice} Editing Resources</h1><p class="mt-4 text-slate-300">Copy prompts and find template guides related to {nice}.</p></section>
+  <section class="container grid gap-6 md:grid-cols-2 lg:grid-cols-3">{items.map((resource) => <ResourceCard resource={resource} />)}</section>
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Search AI Prompts & CapCut Templates | RSP Editor" description="Search free AI photo editing prompts and CapCut template guides by style, tool, and use case.">
+  <section class="container py-14"><span class="badge">Search</span><h1 class="mt-4 text-4xl font-black text-white md:text-5xl">Search Prompts & Templates</h1><p class="mt-4 max-w-2xl text-slate-300">Find cinematic, attitude, cricket, couple, birthday, Hindi song, and viral editing resources.</p><div id="search" class="mt-8"></div></section>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.PagefindUI) new window.PagefindUI({ element: '#search', showSubResults: true });
+    });
+  </script>
+</BaseLayout>

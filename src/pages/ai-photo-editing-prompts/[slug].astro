@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+import { prompts, getRelated } from '../../data/resources';
+
+export function getStaticPaths() {
+  return prompts.map((resource) => ({ params: { slug: resource.slug }, props: { resource } }));
+}
+const { resource } = Astro.props;
+const related = getRelated(resource, 6);
+const title = `${resource.title} - Copy Free | RSP Editor`;
+const description = `${resource.description} Copy this free AI photo editing prompt for ${resource.bestFor.join(', ')}.`;
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rspeditor.com/' },
+    { '@type': 'ListItem', position: 2, name: 'AI Photo Editing Prompts', item: 'https://rspeditor.com/ai-photo-editing-prompts/' },
+    { '@type': 'ListItem', position: 3, name: resource.title, item: `https://rspeditor.com/ai-photo-editing-prompts/${resource.slug}/` }
+  ]},
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [
+    { '@type': 'Question', name: 'Can I use this prompt with ChatGPT?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Upload your photo, paste the prompt, and ask the tool to keep your face realistic.' } },
+    { '@type': 'Question', name: 'Can I use this prompt with Gemini?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The wording is compatible with Gemini-style image editing workflows.' } },
+    { '@type': 'Question', name: 'How do I keep my face realistic?', acceptedAnswer: { '@type': 'Answer', text: 'Use a clear front-facing photo and keep the identity-preservation sentence in the prompt.' } }
+  ]}
+];
+---
+<BaseLayout title={title} description={description} schema={schema}>
+  <article class="container py-12">
+    <nav class="mb-6 text-sm text-slate-400"><a href="/">Home</a> / <a href="/ai-photo-editing-prompts/">AI Prompts</a> / {resource.title}</nav>
+    <div class="grid gap-8 lg:grid-cols-[1fr_380px]">
+      <div>
+        <div class="mb-4 flex flex-wrap gap-2">{resource.tags.map((tag) => <a class="badge" href={`/tag/${tag}/`}>{tag}</a>)}</div>
+        <h1 class="text-4xl font-black tracking-tight text-white md:text-5xl">{resource.title}</h1>
+        <p class="mt-5 text-lg leading-8 text-slate-300">{resource.description}</p>
+        <section class="mt-8 card p-5">
+          <div class="mb-3 flex items-center justify-between gap-3"><h2 class="text-2xl font-black text-white">Copy Prompt</h2><button class="btn-primary py-2" data-copy="#prompt-text">Copy Prompt</button></div>
+          <pre id="prompt-text" class="prompt-box">{resource.prompt}</pre>
+        </section>
+        <section class="prose-lite mt-10">
+          <h2>How To Use This AI Photo Editing Prompt</h2>
+          <ol>
+            <li>Open ChatGPT, Gemini, or another AI image editor.</li>
+            <li>Upload a clear front-facing photo.</li>
+            <li>Copy and paste the prompt above.</li>
+            <li>Ask the tool to keep your face realistic and generate the image.</li>
+            <li>Download and post on Instagram, YouTube Shorts, TikTok, or WhatsApp status.</li>
+          </ol>
+          <h2>Best For</h2>
+          <ul>{resource.bestFor.map((item) => <li>{item}</li>)}</ul>
+          <h2>Tips For Better Results</h2>
+          <ul><li>Use a sharp selfie with natural light.</li><li>Avoid heavy filters before uploading.</li><li>If the face changes too much, add: “preserve my exact facial identity”.</li></ul>
+          <h2>FAQ</h2>
+          <h3>Can I use this prompt with ChatGPT?</h3><p>Yes, it is written for ChatGPT image editing workflows.</p>
+          <h3>Can I use it with Gemini?</h3><p>Yes, Gemini-style image editing tools can use the same prompt structure.</p>
+        </section>
+      </div>
+      <aside class="space-y-4"><div class="card p-5"><h2 class="text-xl font-black text-white">Resource Info</h2><p class="mt-3 text-slate-300">Tool: {resource.tool}</p><p class="text-slate-300">Type: AI Photo Editing Prompt</p><a class="btn-secondary mt-4 w-full" href="/search/">Find more prompts</a></div></aside>
+    </div>
+  </article>
+  <section class="container mt-8"><h2 class="mb-6 text-3xl font-black text-white">Related Prompts & Templates</h2><div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{related.map((item) => <ResourceCard resource={item} />)}</div></section>
+</BaseLayout>

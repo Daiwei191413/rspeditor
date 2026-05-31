@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+import { capcuts, getRelated } from '../../data/resources';
+
+export function getStaticPaths() {
+  return capcuts.map((resource) => ({ params: { slug: resource.slug }, props: { resource } }));
+}
+const { resource } = Astro.props;
+const related = getRelated(resource, 6);
+const title = `${resource.title} - Use Free | RSP Editor`;
+const description = `${resource.description} Template guide for ${resource.bestFor.join(', ')}.`;
+const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rspeditor.com/' },
+  { '@type': 'ListItem', position: 2, name: 'CapCut Templates', item: 'https://rspeditor.com/capcut-templates/' },
+  { '@type': 'ListItem', position: 3, name: resource.title, item: `https://rspeditor.com/capcut-templates/${resource.slug}/` }
+]};
+---
+<BaseLayout title={title} description={description} schema={schema}>
+  <article class="container py-12">
+    <nav class="mb-6 text-sm text-slate-400"><a href="/">Home</a> / <a href="/capcut-templates/">CapCut Templates</a> / {resource.title}</nav>
+    <div class="grid gap-8 lg:grid-cols-[1fr_380px]">
+      <div>
+        <div class="mb-4 flex flex-wrap gap-2">{resource.tags.map((tag) => <a class="badge" href={`/tag/${tag}/`}>{tag}</a>)}</div>
+        <h1 class="text-4xl font-black tracking-tight text-white md:text-5xl">{resource.title}</h1>
+        <p class="mt-5 text-lg leading-8 text-slate-300">{resource.description}</p>
+        <section class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="card p-5"><div class="text-sm text-slate-400">Duration</div><div class="mt-1 text-2xl font-black text-white">{resource.duration}</div></div>
+          <div class="card p-5"><div class="text-sm text-slate-400">Assets</div><div class="mt-1 text-2xl font-black text-white">{resource.assetsNeeded}</div></div>
+          <div class="card p-5"><div class="text-sm text-slate-400">Best For</div><div class="mt-1 text-lg font-bold text-white">{resource.bestFor[0]}</div></div>
+        </section>
+        <div class="mt-8 flex flex-wrap gap-3"><a class="btn-primary" href={resource.templateUrl} rel="nofollow sponsored" target="_blank">Use Template</a><a class="btn-secondary" href="/capcut-templates/">More Templates</a></div>
+        <section class="prose-lite mt-10">
+          <h2>How To Use This CapCut Template</h2>
+          <ol><li>Open the template source in CapCut.</li><li>Add your photos or video clips.</li><li>Match the beat timing and preview the transitions.</li><li>Export in 1080p for Instagram Reels, YouTube Shorts, TikTok, or WhatsApp status.</li></ol>
+          <h2>Manual Editing Alternative</h2><p>If the template link is unavailable, recreate the style with beat cuts, smooth crop zooms, flash transitions, and a short vertical 9:16 export.</p>
+          <h2>Best For</h2><ul>{resource.bestFor.map((item) => <li>{item}</li>)}</ul>
+        </section>
+      </div>
+      <aside><div class="card p-5"><h2 class="text-xl font-black text-white">Template Details</h2><p class="mt-3 text-slate-300">No stolen files are hosted here. Use public template sources or recreate the edit manually.</p></div></aside>
+    </div>
+  </article>
+  <section class="container mt-8"><h2 class="mb-6 text-3xl font-black text-white">Related Templates</h2><div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{related.map((item) => <ResourceCard resource={item} />)}</div></section>
+</BaseLayout>

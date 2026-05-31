@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, canonical = Astro.url.pathname, image = '/og-default.svg', schema } = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site ?? 'https://rspeditor.com').toString();
+const imageUrl = new URL(image, Astro.site ?? 'https://rspeditor.com').toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  </head>
+  <body>
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur">
+      <div class="container flex h-16 items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2 text-lg font-black text-white">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-cyan-300 text-slate-950">R</span>
+          <span>RSP Editor</span>
+        </a>
+        <nav class="hidden items-center gap-6 text-sm font-semibold text-slate-300 md:flex">
+          <a href="/ai-photo-editing-prompts/">AI Prompts</a>
+          <a href="/capcut-templates/">CapCut Templates</a>
+          <a href="/search/">Search</a>
+          <a href="/about/">About</a>
+        </nav>
+        <a href="/search/" class="btn-secondary hidden py-2 md:inline-flex">Search</a>
+      </div>
+    </header>
+    <main data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="mt-20 border-t border-white/10 py-10 text-sm text-slate-400">
+      <div class="container grid gap-8 md:grid-cols-4">
+        <div>
+          <div class="mb-3 text-lg font-black text-white">RSP Editor</div>
+          <p>Free AI photo editing prompts and CapCut template guides for South Asian creators.</p>
+        </div>
+        <div><div class="mb-3 font-bold text-white">Resources</div><a class="block" href="/ai-photo-editing-prompts/">AI Photo Editing Prompts</a><a class="block" href="/capcut-templates/">CapCut Templates</a><a class="block" href="/tag/trending/">Trending</a></div>
+        <div><div class="mb-3 font-bold text-white">Company</div><a class="block" href="/about/">About</a><a class="block" href="/contact/">Contact</a></div>
+        <div><div class="mb-3 font-bold text-white">Legal</div><a class="block" href="/legal/privacy-policy/">Privacy Policy</a><a class="block" href="/legal/disclaimer/">Disclaimer</a><a class="block" href="/legal/dmca/">DMCA</a><a class="block" href="/legal/terms/">Terms</a></div>
+      </div>
+    </footer>
+    <script is:inline>
+      document.addEventListener('click', async (event) => {
+        const btn = event.target.closest('[data-copy]');
+        if (!btn) return;
+        const target = document.querySelector(btn.getAttribute('data-copy'));
+        if (!target) return;
+        await navigator.clipboard.writeText(target.textContent.trim());
+        const old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => (btn.textContent = old), 1500);
+      });
+    </script>
+  </body>
+</html>
