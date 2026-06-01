@@ -336,7 +336,8 @@ const rawResources = [
     "type": "prompt",
     "slug": "gym-boy",
     "image": "/images/photos/gym-boy.webp",
-    "imageAlt": "Fitness portrait style inspiration for AI photo editing",
+    "imageAlt": "Muscular man doing bicep curl in gym for fitness AI photo editing",
+    "imagePosition": "center 25%",
     "title": "Gym Boy AI Photo Editing Prompt",
     "description": "Generate a fitness transformation style gym portrait.",
     "tags": [
@@ -374,7 +375,7 @@ const rawResources = [
     "type": "prompt",
     "slug": "wedding-couple",
     "image": "/images/photos/wedding-couple.webp",
-    "imageAlt": "Wedding couple portrait style inspiration for AI photo editing",
+    "imageAlt": "Wedding couple walking hand in hand outdoors for AI photo editing",
     "title": "Wedding Couple AI Photo Editing Prompt",
     "description": "Create a soft wedding couple portrait with realistic lighting.",
     "tags": [
@@ -1031,6 +1032,7 @@ const rawResources = [
     "slug": "attitude-reels",
     "image": "/images/photos/capcut-attitude.webp",
     "imageAlt": "Confident style inspiration for attitude reels template",
+    "imagePosition": "center 30%",
     "title": "Attitude Reels CapCut Template",
     "description": "Bold attitude template with shake and flash transitions.",
     "tags": [
