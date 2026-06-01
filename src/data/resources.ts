@@ -6,9 +6,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "cinematic-sunset-boy",
-    "image": "/images/photos/cinematic-sunset-boy.webp",
+    "image": "/images/photos/cinematic-sunset-boy-v2.webp",
     "imageAlt": "Cinematic portrait style inspiration photo for sunset boy AI editing prompt",
-    "imagePosition": "center 28%",
     "title": "Cinematic Sunset Boy AI Photo Editing Prompt",
     "description": "Create a warm cinematic sunset portrait for Instagram DP and Reels covers.",
     "tags": [
@@ -29,9 +28,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "cinematic-sunset-girl",
-    "image": "/images/photos/cinematic-sunset-girl.webp",
+    "image": "/images/photos/cinematic-sunset-girl-v2.webp",
     "imageAlt": "Golden hour portrait style inspiration photo for sunset girl AI editing prompt",
-    "imagePosition": "center 30%",
     "title": "Cinematic Sunset Girl AI Photo Editing Prompt",
     "description": "Turn a simple selfie into a soft golden hour cinematic portrait.",
     "tags": [
@@ -1596,7 +1594,7 @@ function withEditorialMetadata(item: Resource): Resource {
     ...item,
     image: item.image ?? `/images/${folder}/${visual}.svg`,
     imageAlt: item.imageAlt ?? `${item.title} ${item.type === 'prompt' ? 'preview' : 'thumbnail'}`,
-    ogImage: item.ogImage ?? `/images/${folder}/${visual}.svg`,
+    ogImage: item.ogImage ?? item.image ?? `/images/${folder}/${visual}.svg`,
     author: item.author ?? AUTHOR,
     datePublished: item.datePublished ?? DATE_PUBLISHED,
     dateModified: item.dateModified ?? DATE_MODIFIED,

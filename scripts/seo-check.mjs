@@ -43,7 +43,7 @@ assert.match(home, /No login required/i, 'hero should show no-login trust note')
 assert.match(home, /Updated weekly/i, 'hero should show freshness trust note');
 assert.match(home, /data-toast/i, 'home should include a global toast region');
 assert.match(home, /Trending/i, 'home should expose discovery badges');
-assert.match(home, /overflow-x-auto/i, 'home tags should support horizontal scrolling on mobile');
+assert.match(home, /flex-wrap/i, 'home tags should wrap cleanly with reduced chip count');
 assert.match(home, /data-visual-variant="clean"/i, 'first three prompt cards should opt into clean visual pilot');
 assert.match(home, /data-clean-preview/i, 'clean prompt cards should render simplified preview treatment');
 assert.equal(countResourceCards(home), 12, 'home should stay focused with 6 prompt cards and 6 CapCut cards');
@@ -65,7 +65,7 @@ assert.match(promptPage, /<img[^>]+alt="Cinematic portrait style inspiration pho
 assert.match(promptPage, /By RSP Editor Team/i, 'prompt detail should show author');
 assert.match(promptPage, /Updated/i, 'prompt detail should show updated date');
 assertHasSchema(promptPage, 'Article', 'prompt detail');
-assert.match(promptPage, /og:image" content="https:\/\/rspeditor\.com\/images\/prompts\/cinematic-sunset-boy\.svg"/i, 'prompt detail should use resource image as OG image');
+assert.match(promptPage, /og:image" content="https:\/\/rspeditor\.com\/images\/photos\/cinematic-sunset-boy-v2\.webp"/i, 'prompt detail should use resource image as OG image');
 
 const capcutPage = html('capcut-templates/hindi-song-beat-sync-2026');
 assert.match(capcutPage, /<img[^>]+alt="Hindi Song Beat Sync Viral CapCut Template thumbnail"/i, 'capcut detail should render thumbnail image with descriptive alt');
