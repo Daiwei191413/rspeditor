@@ -1,6 +1,6 @@
 export type Resource =
-  | { type: 'prompt'; slug: string; title: string; description: string; tags: string[]; tool: string; bestFor: string[]; prompt: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string; badge?: 'New' | 'Trending' | 'Popular' | 'Free' }
-  | { type: 'capcut'; slug: string; title: string; description: string; tags: string[]; duration: string; assetsNeeded: string; bestFor: string[]; templateUrl: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string; badge?: 'New' | 'Trending' | 'Popular' | 'Free' };
+  | { type: 'prompt'; slug: string; title: string; description: string; tags: string[]; tool: string; bestFor: string[]; prompt: string; image?: string; imageAlt?: string; imagePosition?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string; badge?: 'New' | 'Trending' | 'Popular' | 'Free' }
+  | { type: 'capcut'; slug: string; title: string; description: string; tags: string[]; duration: string; assetsNeeded: string; bestFor: string[]; templateUrl: string; image?: string; imageAlt?: string; imagePosition?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string; badge?: 'New' | 'Trending' | 'Popular' | 'Free' };
 
 const rawResources = [
   {
@@ -8,6 +8,7 @@ const rawResources = [
     "slug": "cinematic-sunset-boy",
     "image": "/images/photos/cinematic-sunset-boy.webp",
     "imageAlt": "Cinematic portrait style inspiration photo for sunset boy AI editing prompt",
+    "imagePosition": "center 28%",
     "title": "Cinematic Sunset Boy AI Photo Editing Prompt",
     "description": "Create a warm cinematic sunset portrait for Instagram DP and Reels covers.",
     "tags": [
@@ -30,6 +31,7 @@ const rawResources = [
     "slug": "cinematic-sunset-girl",
     "image": "/images/photos/cinematic-sunset-girl.webp",
     "imageAlt": "Golden hour portrait style inspiration photo for sunset girl AI editing prompt",
+    "imagePosition": "center 30%",
     "title": "Cinematic Sunset Girl AI Photo Editing Prompt",
     "description": "Turn a simple selfie into a soft golden hour cinematic portrait.",
     "tags": [
