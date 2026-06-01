@@ -11,7 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "validate": "npm run build"
+    "seo-check": "node scripts/seo-check.mjs",
+    "generate-visuals": "node scripts/generate-visuals.mjs",
+    "validate": "npm run build && npm run seo-check"
   },
   "dependencies": {
     "astro": "^6.4.2"

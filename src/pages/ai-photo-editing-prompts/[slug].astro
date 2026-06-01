@@ -10,12 +10,15 @@ const { resource } = Astro.props;
 const related = getRelated(resource, 6);
 const title = `${resource.title} - Copy Free | RSP Editor`;
 const description = `${resource.description} Copy this free AI photo editing prompt for ${resource.bestFor.join(', ')}.`;
+const pageUrl = `https://rspeditor.com/ai-photo-editing-prompts/${resource.slug}/`;
+const imageUrl = new URL(resource.ogImage ?? resource.image, 'https://rspeditor.com').toString();
 const schema = [
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rspeditor.com/' },
     { '@type': 'ListItem', position: 2, name: 'AI Photo Editing Prompts', item: 'https://rspeditor.com/ai-photo-editing-prompts/' },
-    { '@type': 'ListItem', position: 3, name: resource.title, item: `https://rspeditor.com/ai-photo-editing-prompts/${resource.slug}/` }
+    { '@type': 'ListItem', position: 3, name: resource.title, item: pageUrl }
   ]},
+  { '@context': 'https://schema.org', '@type': 'Article', headline: resource.title, description, image: imageUrl, author: { '@type': 'Organization', name: resource.author }, publisher: { '@type': 'Organization', name: 'RSP Editor', logo: { '@type': 'ImageObject', url: 'https://rspeditor.com/favicon.svg' } }, datePublished: resource.datePublished, dateModified: resource.dateModified, mainEntityOfPage: pageUrl },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [
     { '@type': 'Question', name: 'Can I use this prompt with ChatGPT?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Upload your photo, paste the prompt, and ask the tool to keep your face realistic.' } },
     { '@type': 'Question', name: 'Can I use this prompt with Gemini?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The wording is compatible with Gemini-style image editing workflows.' } },
@@ -23,14 +26,19 @@ const schema = [
   ]}
 ];
 ---
-<BaseLayout title={title} description={description} schema={schema}>
+<BaseLayout title={title} description={description} schema={schema} image={resource.ogImage ?? resource.image}>
   <article class="container py-12">
     <nav class="mb-6 text-sm text-slate-400"><a href="/">Home</a> / <a href="/ai-photo-editing-prompts/">AI Prompts</a> / {resource.title}</nav>
     <div class="grid gap-8 lg:grid-cols-[1fr_380px]">
       <div>
         <div class="mb-4 flex flex-wrap gap-2">{resource.tags.map((tag) => <a class="badge" href={`/tag/${tag}/`}>{tag}</a>)}</div>
         <h1 class="text-4xl font-black tracking-tight text-white md:text-5xl">{resource.title}</h1>
+        <p class="mt-4 text-sm font-semibold text-slate-400">By {resource.author} · Updated <time datetime={resource.dateModified}>{resource.dateModified}</time></p>
         <p class="mt-5 text-lg leading-8 text-slate-300">{resource.description}</p>
+        <figure class="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
+          <img src={resource.image} alt={resource.imageAlt} width="1200" height="675" class="w-full object-cover" loading="eager" decoding="async" />
+          <figcaption class="px-5 py-3 text-sm text-slate-400">Preview style for {resource.title}. Use your own clear selfie for best results.</figcaption>
+        </figure>
         <section class="mt-8 card p-5">
           <div class="mb-3 flex items-center justify-between gap-3"><h2 class="text-2xl font-black text-white">Copy Prompt</h2><button class="btn-primary py-2" data-copy="#prompt-text">Copy Prompt</button></div>
           <pre id="prompt-text" class="prompt-box">{resource.prompt}</pre>
@@ -53,7 +61,7 @@ const schema = [
           <h3>Can I use it with Gemini?</h3><p>Yes, Gemini-style image editing tools can use the same prompt structure.</p>
         </section>
       </div>
-      <aside class="space-y-4"><div class="card p-5"><h2 class="text-xl font-black text-white">Resource Info</h2><p class="mt-3 text-slate-300">Tool: {resource.tool}</p><p class="text-slate-300">Type: AI Photo Editing Prompt</p><a class="btn-secondary mt-4 w-full" href="/search/">Find more prompts</a></div></aside>
+      <aside class="space-y-4"><div class="card p-5"><h2 class="text-xl font-black text-white">Resource Info</h2><p class="mt-3 text-slate-300">Tool: {resource.tool}</p><p class="text-slate-300">Type: AI Photo Editing Prompt</p><p class="text-slate-300">Author: {resource.author}</p><a class="btn-secondary mt-4 w-full" href="/search/">Find more prompts</a></div></aside>
     </div>
   </article>
   <section class="container mt-8"><h2 class="mb-6 text-3xl font-black text-white">Related Prompts & Templates</h2><div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{related.map((item) => <ResourceCard resource={item} />)}</div></section>

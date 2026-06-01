@@ -1,4 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'About RSP Editor - AI Photo Editing Prompts & CapCut Guides';
+const description = 'Learn how RSP Editor creates free AI photo editing prompts and CapCut template guides for South Asian creators.';
 ---
-<BaseLayout title="About RSP Editor" description="RSP Editor helps South Asian creators find free AI photo editing prompts and CapCut template guides."><section class="container prose-lite py-14"><h1 class="text-4xl font-black text-white">About RSP Editor</h1><p>RSP Editor is a free editing resource site for South Asian creators. We organize AI photo editing prompts and CapCut template guides for Instagram Reels, YouTube Shorts, TikTok, and WhatsApp status.</p><p>Our focus is simple: searchable resources, copy-ready prompts, mobile-first pages, and safe usage guidance.</p></section></BaseLayout>
+<BaseLayout title={title} description={description}>
+  <section class="container prose-lite py-14">
+    <p class="badge">About RSP Editor</p>
+    <h1 class="mt-5 text-4xl font-black text-white md:text-5xl">Free editing resources for South Asian creators</h1>
+    <p class="text-lg leading-8 text-slate-300">RSP Editor helps creators make better Instagram Reels, YouTube Shorts, TikTok posts, profile photos, and WhatsApp status edits with copy-ready AI photo editing prompts and practical CapCut template guides.</p>
+
+    <h2>Our Mission</h2>
+    <p>Our mission is to make viral editing styles easier to understand and recreate. We focus on lightweight, mobile-first resources that can be copied, tested, and adapted quickly by creators in India, Pakistan, Bangladesh, Nepal, Sri Lanka, and other South Asian communities.</p>
+
+    <h2>Who We Help</h2>
+    <ul>
+      <li>Instagram and TikTok creators looking for trending photo prompt ideas.</li>
+      <li>YouTube Shorts editors who need quick CapCut editing references.</li>
+      <li>Students, freelancers, and small creator pages building profile photos, reels covers, and status edits.</li>
+      <li>Beginners who want step-by-step editing guidance without complex software.</li>
+    </ul>
+
+    <h2>What You Can Find Here</h2>
+    <p>RSP Editor publishes AI photo editing prompts, ChatGPT image prompt ideas, Gemini-style editing prompts, CapCut template guides, tag pages, FAQs, and related resources. Each page is designed around a clear action: copy a prompt, understand a template style, or discover a related editing idea.</p>
+
+    <h2>How We Create AI Photo Editing Prompts</h2>
+    <p>Prompts are written and reviewed by the RSP Editor Team. We structure prompts to preserve facial identity, describe lighting and composition clearly, and support common social formats such as 4:5 portraits, reels covers, and profile photos. We avoid instructions that require celebrity likenesses, private identities, or copyrighted characters.</p>
+
+    <h2>How We Review CapCut Template Guides</h2>
+    <p>CapCut pages explain edit styles, timing, mood, duration, assets needed, and manual recreation steps. We do not host stolen template files, paid presets, or copyrighted packs. When a public template source is referenced, the page links out instead of re-uploading the original asset.</p>
+
+    <h2>Editorial Standards</h2>
+    <ul>
+      <li>Pages should be useful on mobile and load quickly on slower connections.</li>
+      <li>Prompt blocks should be copy-ready and easy to test.</li>
+      <li>Descriptions should explain the style, use case, and best input photo type.</li>
+      <li>Images and thumbnails should be original, licensed, or safe placeholders created for RSP Editor.</li>
+      <li>Content is updated when trends, tools, or editing workflows change.</li>
+    </ul>
+
+    <h2>Copyright and DMCA Policy</h2>
+    <p>RSP Editor is a resource and education site. We do not intentionally publish copyrighted packs, private presets, or unauthorized downloads. If you believe any content references your copyrighted material incorrectly, please contact us through the DMCA page so we can review and respond.</p>
+
+    <h2>Corrections and Contact</h2>
+    <p>If a prompt does not work well, a template link changes, or you want to suggest a safer wording, contact the RSP Editor Team. We use feedback to improve prompt quality, page clarity, and creator safety.</p>
+
+    <p><a class="btn-primary" href="/contact/">Contact RSP Editor</a> <a class="btn-secondary ml-3" href="/legal/dmca/">DMCA Policy</a></p>
+  </section>
+</BaseLayout>

@@ -1,8 +1,8 @@
 export type Resource =
-  | { type: 'prompt'; slug: string; title: string; description: string; tags: string[]; tool: string; bestFor: string[]; prompt: string }
-  | { type: 'capcut'; slug: string; title: string; description: string; tags: string[]; duration: string; assetsNeeded: string; bestFor: string[]; templateUrl: string };
+  | { type: 'prompt'; slug: string; title: string; description: string; tags: string[]; tool: string; bestFor: string[]; prompt: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string }
+  | { type: 'capcut'; slug: string; title: string; description: string; tags: string[]; duration: string; assetsNeeded: string; bestFor: string[]; templateUrl: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string };
 
-export const resources = [
+const rawResources = [
   {
     "type": "prompt",
     "slug": "cinematic-sunset-boy",
@@ -1518,6 +1518,77 @@ export const resources = [
     "templateUrl": "https://www.capcut.com/templates"
   }
 ] satisfies Resource[];
+
+const AUTHOR = 'RSP Editor Team';
+const DATE_PUBLISHED = '2026-06-01';
+const DATE_MODIFIED = '2026-06-01';
+
+const promptVisuals = [
+  'cinematic-sunset-boy',
+  'cinematic-sunset-girl',
+  'attitude-boy',
+  'cute-couple',
+  'birthday-poster',
+  'cricket-stadium',
+  'anime-inspired',
+  'instagram-dp',
+  'viral-reels-cover',
+  'lofi-dusk-filter',
+  'travel-double-exposure',
+  'profile-avatar'
+];
+
+const capcutVisuals = [
+  'hindi-song-beat-sync-2026',
+  'punjabi-song-reels-2026',
+  'love-beat-sync-2026',
+  'attitude-reels-2026',
+  'birthday-video-2026',
+  'photo-beat-sync-2026'
+];
+
+function pickPromptVisual(item: Resource) {
+  if (item.type !== 'prompt') return '';
+  if (item.slug === 'cinematic-sunset-boy') return 'cinematic-sunset-boy';
+  if (item.slug === 'cinematic-sunset-girl') return 'cinematic-sunset-girl';
+  if (item.tags.includes('attitude')) return 'attitude-boy';
+  if (item.tags.includes('couple') || item.tags.includes('love')) return 'cute-couple';
+  if (item.tags.includes('birthday')) return 'birthday-poster';
+  if (item.tags.includes('cricket')) return 'cricket-stadium';
+  if (item.tags.includes('anime')) return 'anime-inspired';
+  if (item.tags.includes('instagram-dp') || item.tags.includes('profile-photo')) return 'instagram-dp';
+  if (item.tags.includes('reels-cover') || item.tags.includes('viral')) return 'viral-reels-cover';
+  if (item.tags.includes('lofi') || item.slug.includes('lofi')) return 'lofi-dusk-filter';
+  if (item.tags.includes('travel') || item.slug.includes('travel')) return 'travel-double-exposure';
+  return promptVisuals[Math.abs(item.slug.length) % promptVisuals.length];
+}
+
+function pickCapcutVisual(item: Resource) {
+  if (item.type !== 'capcut') return '';
+  if (capcutVisuals.includes(item.slug)) return item.slug;
+  if (item.tags.includes('hindi-song')) return 'hindi-song-beat-sync-2026';
+  if (item.tags.includes('punjabi-song')) return 'punjabi-song-reels-2026';
+  if (item.tags.includes('love') || item.tags.includes('couple')) return 'love-beat-sync-2026';
+  if (item.tags.includes('attitude')) return 'attitude-reels-2026';
+  if (item.tags.includes('birthday')) return 'birthday-video-2026';
+  return 'photo-beat-sync-2026';
+}
+
+function withEditorialMetadata(item: Resource): Resource {
+  const visual = item.type === 'prompt' ? pickPromptVisual(item) : pickCapcutVisual(item);
+  const folder = item.type === 'prompt' ? 'prompts' : 'capcut';
+  return {
+    ...item,
+    image: item.image ?? `/images/${folder}/${visual}.svg`,
+    imageAlt: item.imageAlt ?? `${item.title} ${item.type === 'prompt' ? 'preview' : 'thumbnail'}`,
+    ogImage: item.ogImage ?? `/images/${folder}/${visual}.svg`,
+    author: item.author ?? AUTHOR,
+    datePublished: item.datePublished ?? DATE_PUBLISHED,
+    dateModified: item.dateModified ?? DATE_MODIFIED
+  };
+}
+
+export const resources = rawResources.map(withEditorialMetadata);
 export const prompts = resources.filter((item) => item.type === 'prompt');
 export const capcuts = resources.filter((item) => item.type === 'capcut');
 export const allTags = Array.from(new Set(resources.flatMap((item) => item.tags))).sort();
