@@ -296,7 +296,7 @@ const rawResources = [
     "type": "prompt",
     "slug": "attitude-girl",
     "image": "/images/photos/attitude-girl.webp",
-    "imageAlt": "Confident woman with editorial neon lighting for AI photo editing",
+    "imageAlt": "Confident female portrait style inspiration for AI photo editing",
     "title": "Attitude Girl AI Photo Editing Prompt",
     "description": "Create a confident attitude girl portrait for profile photos.",
     "tags": [
