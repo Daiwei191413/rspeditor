@@ -142,6 +142,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "cute-couple",
+    "image": "/images/photos/cute-couple.webp",
+    "imageAlt": "Romantic couple portrait style inspiration for AI photo editing",
     "title": "Cute Couple AI Photo Editing Prompt",
     "description": "Make a romantic couple portrait for status, DP, and reels covers.",
     "tags": [
@@ -160,6 +162,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "cricket-stadium",
+    "image": "/images/photos/cricket-stadium.webp",
+    "imageAlt": "Cricket stadium atmosphere inspiration for AI photo editing",
     "title": "Cricket Stadium AI Photo Editing Prompt",
     "description": "Place yourself inside a dramatic cricket stadium fan poster.",
     "tags": [
@@ -251,6 +255,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "birthday-poster",
+    "image": "/images/photos/birthday-poster.webp",
+    "imageAlt": "Birthday celebration style inspiration for AI poster editing",
     "title": "Birthday Poster AI Photo Editing Prompt",
     "description": "Create a birthday poster portrait with balloons, lights, and stylish typography.",
     "tags": [
@@ -269,6 +275,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "attitude-boy",
+    "image": "/images/photos/attitude-boy.webp",
+    "imageAlt": "Confident male portrait style inspiration for AI photo editing",
     "title": "Attitude Boy AI Photo Editing Prompt",
     "description": "Make a bold attitude boy portrait with cinematic lighting.",
     "tags": [
@@ -287,6 +295,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "attitude-girl",
+    "image": "/images/photos/attitude-girl.webp",
+    "imageAlt": "Confident female portrait style inspiration for AI photo editing",
     "title": "Attitude Girl AI Photo Editing Prompt",
     "description": "Create a confident attitude girl portrait for profile photos.",
     "tags": [
@@ -305,6 +315,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "bike-rider",
+    "image": "/images/photos/bike-rider.webp",
+    "imageAlt": "Motorcycle rider style inspiration for AI photo editing",
     "title": "Bike Rider AI Photo Editing Prompt",
     "description": "Create a dramatic bike rider poster for reels and DP.",
     "tags": [
@@ -323,6 +335,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "gym-boy",
+    "image": "/images/photos/gym-boy.webp",
+    "imageAlt": "Fitness portrait style inspiration for AI photo editing",
     "title": "Gym Boy AI Photo Editing Prompt",
     "description": "Generate a fitness transformation style gym portrait.",
     "tags": [
@@ -359,6 +373,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "wedding-couple",
+    "image": "/images/photos/wedding-couple.webp",
+    "imageAlt": "Wedding couple portrait style inspiration for AI photo editing",
     "title": "Wedding Couple AI Photo Editing Prompt",
     "description": "Create a soft wedding couple portrait with realistic lighting.",
     "tags": [
@@ -449,6 +465,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "anime-portrait",
+    "image": "/images/photos/anime-portrait.webp",
+    "imageAlt": "Colorful artistic style inspiration for anime portrait AI editing",
     "title": "Anime Portrait AI Photo Editing Prompt",
     "description": "Convert a selfie into an anime-inspired portrait without copying protected characters.",
     "tags": [
@@ -467,6 +485,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "studio-headshot",
+    "image": "/images/photos/studio-headshot.webp",
+    "imageAlt": "Professional studio headshot style inspiration for AI photo editing",
     "title": "Studio Headshot AI Photo Editing Prompt",
     "description": "Create a clean professional studio headshot from a casual photo.",
     "tags": [
@@ -946,6 +966,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "hindi-song-beat-sync",
+    "image": "/images/photos/capcut-hindi-song.webp",
+    "imageAlt": "Music concert atmosphere for Hindi song beat sync video template",
     "title": "Hindi Song Beat Sync CapCut Template",
     "description": "A fast beat-sync template for Hindi song reels and shorts.",
     "tags": [
@@ -965,6 +987,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "punjabi-song-reels",
+    "image": "/images/photos/capcut-punjabi.webp",
+    "imageAlt": "Energetic dance vibe for Punjabi song reels template",
     "title": "Punjabi Song CapCut Template",
     "description": "High-energy Punjabi song template for attitude reels.",
     "tags": [
@@ -984,6 +1008,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "love-beat-sync",
+    "image": "/images/photos/capcut-love.webp",
+    "imageAlt": "Romantic mood inspiration for love beat sync video template",
     "title": "Love Beat Sync CapCut Template",
     "description": "Romantic beat sync edit for couples and love status.",
     "tags": [
@@ -1003,6 +1029,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "attitude-reels",
+    "image": "/images/photos/capcut-attitude.webp",
+    "imageAlt": "Confident style inspiration for attitude reels template",
     "title": "Attitude Reels CapCut Template",
     "description": "Bold attitude template with shake and flash transitions.",
     "tags": [
@@ -1022,6 +1050,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "birthday-video",
+    "image": "/images/photos/capcut-birthday.webp",
+    "imageAlt": "Birthday celebration mood for video template",
     "title": "Birthday CapCut Template",
     "description": "Birthday video template for friends, family, and status posts.",
     "tags": [
@@ -1041,6 +1071,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "photo-beat-sync",
+    "image": "/images/photos/capcut-photo-sync.webp",
+    "imageAlt": "Camera and photography mood for photo beat sync template",
     "title": "Photo Beat Sync CapCut Template",
     "description": "Simple photo beat sync edit for any trending audio.",
     "tags": [
@@ -1060,6 +1092,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "slow-motion",
+    "image": "/images/photos/capcut-slow-motion.webp",
+    "imageAlt": "Dynamic motion inspiration for slow motion video template",
     "title": "Slow Motion CapCut Template",
     "description": "Smooth slow motion template for cinematic clips.",
     "tags": [
@@ -1079,6 +1113,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "sad-song",
+    "image": "/images/photos/capcut-sad-song.webp",
+    "imageAlt": "Moody emotional atmosphere for sad song video template",
     "title": "Sad Song CapCut Template",
     "description": "Emotional sad song template with lyric timing.",
     "tags": [
@@ -1098,6 +1134,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "friendship",
+    "image": "/images/photos/capcut-friendship.webp",
+    "imageAlt": "Friends together inspiration for friendship video template",
     "title": "Friendship CapCut Template",
     "description": "Friendship memories edit for reels and WhatsApp status.",
     "tags": [
@@ -1117,6 +1155,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "couple-template",
+    "image": "/images/photos/capcut-couple.webp",
+    "imageAlt": "Couple together inspiration for romantic video template",
     "title": "Couple CapCut Template",
     "description": "Cute couple transition template for love reels.",
     "tags": [
@@ -1136,6 +1176,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "travel-reels",
+    "image": "/images/photos/capcut-travel.webp",
+    "imageAlt": "Road trip adventure mood for travel reels template",
     "title": "Travel Reels CapCut Template",
     "description": "Travel montage template with cinematic transitions.",
     "tags": [
@@ -1155,6 +1197,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "cricket-fan",
+    "image": "/images/photos/capcut-cricket.webp",
+    "imageAlt": "Cricket match atmosphere for fan celebration video template",
     "title": "Cricket CapCut Template",
     "description": "Cricket fan edit template for match days and IPL posts.",
     "tags": [
@@ -1174,6 +1218,8 @@ const rawResources = [
   {
     "type": "capcut",
     "slug": "bike-rider-template",
+    "image": "/images/photos/capcut-bike.webp",
+    "imageAlt": "Motorcycle riding style for bike rider video template",
     "title": "Bike Rider CapCut Template",
     "description": "Bike rider attitude edit with speed ramp feel.",
     "tags": [
