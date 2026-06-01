@@ -50,7 +50,7 @@ const rawResources = [
     "type": "prompt",
     "slug": "lofi-dusk-filter",
     "image": "/images/photos/lofi-dusk-filter.webp",
-    "imageAlt": "Lofi dusk landscape mood inspiration photo for AI editing prompt",
+    "imageAlt": "Moody mountain landscape with Milky Way stars for lofi dusk filter AI editing",
     "title": "Lofi Dusk Filter AI Photo Editing Prompt",
     "description": "Generate the popular glowing lofi dusk filter look for social posts.",
     "tags": [
@@ -296,7 +296,7 @@ const rawResources = [
     "type": "prompt",
     "slug": "attitude-girl",
     "image": "/images/photos/attitude-girl.webp",
-    "imageAlt": "Confident female portrait style inspiration for AI photo editing",
+    "imageAlt": "Confident woman with editorial neon lighting for AI photo editing",
     "title": "Attitude Girl AI Photo Editing Prompt",
     "description": "Create a confident attitude girl portrait for profile photos.",
     "tags": [
@@ -375,7 +375,7 @@ const rawResources = [
     "type": "prompt",
     "slug": "wedding-couple",
     "image": "/images/photos/wedding-couple.webp",
-    "imageAlt": "Wedding couple walking hand in hand outdoors for AI photo editing",
+    "imageAlt": "Romantic beach wedding couple at sunset for AI photo editing",
     "title": "Wedding Couple AI Photo Editing Prompt",
     "description": "Create a soft wedding couple portrait with realistic lighting.",
     "tags": [
@@ -390,6 +390,27 @@ const rawResources = [
       "WhatsApp status"
     ],
     "prompt": "Edit my uploaded photo into a wedding couple style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+  },
+  {
+    "type": "prompt",
+    "slug": "neon-cyberpunk-portrait",
+    "image": "/images/photos/neon-cyberpunk.webp",
+    "imageAlt": "Retro neon cyberpunk tech setup with cyan and magenta lighting",
+    "title": "Neon Cyberpunk AI Photo Editing Prompt",
+    "description": "Transform your portrait into a futuristic cyberpunk scene with neon lighting.",
+    "tags": [
+      "cyberpunk",
+      "neon",
+      "tech",
+      "futuristic"
+    ],
+    "tool": "ChatGPT / Gemini",
+    "bestFor": [
+      "Instagram DP",
+      "Reels cover",
+      "YouTube Shorts"
+    ],
+    "prompt": "Transform my uploaded photo into a cyberpunk neon portrait. Place me in a futuristic city street or tech lab environment. Keep my face 100% realistic and unchanged. Lighting: dramatic dual-tone neon — cyan/electric blue from one side, hot magenta/pink from the other. Add holographic UI elements floating near me (subtle, not blocking face), neon sign reflections on wet surfaces, and slight chromatic aberration on edges. My outfit should look techy — dark jacket with subtle LED accents or reflective material. Background: dark urban alley with neon signs, rain-slicked ground reflecting colors, slight fog/haze for depth. Color grade: high contrast, deep blacks, saturated neon highlights. Composition: vertical 4:5, subject centered. Output: 2048x2560px, photorealistic, no text overlays."
   },
   {
     "type": "prompt",
@@ -1240,6 +1261,28 @@ const rawResources = [
   },
   {
     "type": "capcut",
+    "slug": "tech-intro",
+    "image": "/images/photos/capcut-tech-intro.webp",
+    "imageAlt": "Matrix-style green digital code rain for tech intro template",
+    "title": "Tech Intro CapCut Template",
+    "description": "Futuristic tech intro with glitch transitions and digital rain effects.",
+    "tags": [
+      "tech",
+      "intro",
+      "glitch",
+      "futuristic"
+    ],
+    "duration": "8s",
+    "assetsNeeded": "3 photos + logo",
+    "bestFor": [
+      "YouTube Intro",
+      "Instagram Reels",
+      "Tech content"
+    ],
+    "templateUrl": "https://www.capcut.com/templates"
+  },
+  {
+    "type": "capcut",
     "slug": "lyrics-reaction",
     "title": "Trending Lyrics CapCut Template",
     "description": "Lyric reaction template for viral hook sections.",
@@ -1666,6 +1709,7 @@ export const featuredPromptSlugs = [
   'bike-rider',
   'gym-boy',
   'wedding-couple',
+  'neon-cyberpunk-portrait',
   'anime-portrait',
   'studio-headshot'
 ];
@@ -1683,7 +1727,8 @@ export const featuredCapcutSlugs = [
   'couple-template',
   'travel-reels',
   'cricket-fan',
-  'bike-rider-template'
+  'bike-rider-template',
+  'tech-intro'
 ];
 
 const bySlug = (items: Resource[], slugs: string[]) => slugs.map((slug) => items.find((item) => item.slug === slug)).filter(Boolean) as Resource[];

@@ -49,14 +49,14 @@ assert.match(home, /data-clean-preview/i, 'clean prompt cards should render simp
 assert.equal(countResourceCards(home), 12, 'home should stay focused with 6 prompt cards and 6 CapCut cards');
 
 const promptListing = html('ai-photo-editing-prompts');
-assert.equal(countResourceCards(promptListing), 13, 'AI Prompts listing should show 13 curated popular prompts');
-assert.match(promptListing, /Showing 13 popular prompts/i, 'AI Prompts listing should explain curated scope');
+assert.equal(countResourceCards(promptListing), 14, 'AI Prompts listing should show 14 curated popular prompts');
+assert.match(promptListing, /Showing 14 popular prompts/i, 'AI Prompts listing should explain curated scope');
 assert.match(promptListing, /Studio Headshot AI Photo Editing Prompt/i, 'AI Prompts listing should include selected 13th prompt');
 assert.doesNotMatch(promptListing, /Double Exposure Travel AI Photo Editing Prompt/i, 'AI Prompts listing should hide non-curated prompt cards for now');
 
 const capcutListing = html('capcut-templates');
-assert.equal(countResourceCards(capcutListing), 13, 'CapCut listing should show 13 curated popular templates');
-assert.match(capcutListing, /Showing 13 popular templates/i, 'CapCut listing should explain curated scope');
+assert.equal(countResourceCards(capcutListing), 14, 'CapCut listing should show 14 curated popular templates');
+assert.match(capcutListing, /Showing 14 popular templates/i, 'CapCut listing should explain curated scope');
 assert.match(capcutListing, /Bike Rider CapCut Template/i, 'CapCut listing should include selected 13th template');
 assert.doesNotMatch(capcutListing, /Lyrics Reaction CapCut Template/i, 'CapCut listing should hide non-curated templates for now');
 

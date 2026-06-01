@@ -18,9 +18,13 @@ const shortTitle = resource.title
           decoding="async"
           width="1200"
           height="675"
-          class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.05]"
+          style={`object-position: ${resource.imagePosition ?? 'center center'}`}
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent transition duration-300 group-hover:from-slate-950/80 group-hover:via-slate-950/40"></div>
+        <div class="absolute inset-x-0 bottom-0 translate-y-full p-4 transition duration-300 group-hover:translate-y-0">
+          <p class="text-sm font-bold text-white drop-shadow-lg line-clamp-2">{resource.title}</p>
+        </div>
         <div class="absolute left-3 top-3 rounded-full border border-white/15 bg-slate-950/70 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-cyan-100 backdrop-blur">
           {resource.badge ?? 'Free'}
         </div>
