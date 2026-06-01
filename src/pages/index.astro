@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResourceCard from '../components/ResourceCard.astro';
-import { prompts, capcuts } from '../data/resources';
+import { featuredPrompts, featuredCapcuts } from '../data/resources';
 const title = 'RSP Editor - Free AI Photo Editing Prompts & CapCut Templates';
 const description = 'Discover free AI photo editing prompts, ChatGPT and Gemini prompts, and trending CapCut templates for Instagram Reels, YouTube Shorts, TikTok, and WhatsApp status.';
 const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'RSP Editor', url: 'https://rspeditor.com', potentialAction: { '@type': 'SearchAction', target: 'https://rspeditor.com/search/?q={search_term_string}', 'query-input': 'required name=search_term_string' } };
 const heroTags = ['cinematic','attitude','viral','couple','beat-sync','cricket','birthday','poster','travel','avatar','bike','lofi'];
-const visualStack = [prompts[0], prompts[7] ?? prompts[1], capcuts[0]];
+const visualStack = [featuredPrompts[0], featuredPrompts[7] ?? featuredPrompts[1], featuredCapcuts[0]];
 ---
-<BaseLayout title={title} description={description} schema={schema} image={prompts[0].image}>
+<BaseLayout title={title} description={description} schema={schema} image={featuredPrompts[0].image}>
   <section class="relative overflow-hidden py-10 md:py-20">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.24),transparent_34%),radial-gradient(circle_at_80%_18%,rgba(217,70,239,.20),transparent_32%),linear-gradient(180deg,rgba(15,23,42,.2),rgba(15,23,42,1))]"></div>
     <div class="container grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
@@ -62,7 +62,7 @@ const visualStack = [prompts[0], prompts[7] ?? prompts[1], capcuts[0]];
     <a href="/ai-photo-editing-prompts/" class="card group p-8 transition hover:-translate-y-1 hover:border-cyan-300/35"><span class="badge">Prompt library</span><h2 class="mt-4 text-3xl font-black text-white group-hover:text-cyan-100">AI Photo Editing Prompts</h2><p class="mt-3 text-slate-300">Ready-to-copy prompts for ChatGPT, Gemini, and AI image editors.</p></a>
     <a href="/capcut-templates/" class="card group p-8 transition hover:-translate-y-1 hover:border-cyan-300/35"><span class="badge">Template guides</span><h2 class="mt-4 text-3xl font-black text-white group-hover:text-cyan-100">CapCut Templates</h2><p class="mt-3 text-slate-300">Trending template guides for Reels, Shorts, TikTok, and status videos.</p></a>
   </section>
-  <section class="container mt-16"><div class="mb-6 flex items-end justify-between gap-4"><div><span class="badge">Updated weekly</span><h2 class="mt-3 text-3xl font-black text-white">Latest AI Prompts</h2></div><a class="btn-secondary hidden py-2 text-sm sm:inline-flex" href="/ai-photo-editing-prompts/">View all</a></div><div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{prompts.slice(0, 9).map((resource) => <ResourceCard resource={resource} />)}</div></section>
-  <section class="container mt-16"><div class="mb-6 flex items-end justify-between gap-4"><div><span class="badge">Trending</span><h2 class="mt-3 text-3xl font-black text-white">Trending CapCut Templates</h2></div><a class="btn-secondary hidden py-2 text-sm sm:inline-flex" href="/capcut-templates/">View all</a></div><div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{capcuts.slice(0, 6).map((resource) => <ResourceCard resource={resource} />)}</div></section>
+  <section class="container mt-16"><div class="mb-6 flex items-end justify-between gap-4"><div><span class="badge">Curated</span><h2 class="mt-3 text-3xl font-black text-white">Latest AI Prompts</h2><p class="mt-2 text-sm text-slate-400">Showing 6 popular prompts while we polish the full library.</p></div><a class="btn-secondary hidden py-2 text-sm sm:inline-flex" href="/ai-photo-editing-prompts/">View all</a></div><div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{featuredPrompts.slice(0, 6).map((resource, index) => <ResourceCard resource={resource} visualVariant={index < 3 ? 'clean' : 'default'} />)}</div></section>
+  <section class="container mt-16"><div class="mb-6 flex items-end justify-between gap-4"><div><span class="badge">Curated</span><h2 class="mt-3 text-3xl font-black text-white">Trending CapCut Templates</h2><p class="mt-2 text-sm text-slate-400">Showing 6 popular templates while we polish the full library.</p></div><a class="btn-secondary hidden py-2 text-sm sm:inline-flex" href="/capcut-templates/">View all</a></div><div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{featuredCapcuts.slice(0, 6).map((resource) => <ResourceCard resource={resource} />)}</div></section>
   <section class="container mt-16 prose-lite"><h2>FAQ</h2><h3>Are these AI photo editing prompts free?</h3><p>Yes. You can copy the prompts and use them with supported AI image editors.</p><h3>Can I use these prompts in ChatGPT and Gemini?</h3><p>Most prompts are written for ChatGPT image tools and Gemini-style image editing workflows.</p><h3>Are CapCut templates hosted here?</h3><p>We provide template guides and links to public template sources where available. We do not host stolen files.</p></section>
 </BaseLayout>

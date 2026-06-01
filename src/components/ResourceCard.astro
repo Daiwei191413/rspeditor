@@ -1,43 +1,70 @@
 ---
-const { resource } = Astro.props;
+const { resource, visualVariant = 'default' } = Astro.props;
 const href = resource.type === 'prompt' ? `/ai-photo-editing-prompts/${resource.slug}/` : `/capcut-templates/${resource.slug}/`;
 const actionText = resource.type === 'prompt' ? 'Copy Prompt' : 'Use Template';
+const shortTitle = resource.title
+  .replace('AI Photo Editing Prompt', '')
+  .replace('CapCut Template', '')
+  .trim();
 ---
-<article class="card group overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.07] hover:shadow-cyan-950/40" data-pagefind-ignore>
+<article class="card group overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.07] hover:shadow-cyan-950/40" data-pagefind-ignore data-visual-variant={visualVariant}>
   <a href={href} class="block">
-    <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
-      <img
-        src={resource.image}
-        alt={resource.imageAlt}
-        loading="lazy"
-        decoding="async"
-        width="1200"
-        height="675"
-        class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-      />
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.20),transparent_34%),radial-gradient(circle_at_85%_15%,rgba(168,85,247,0.22),transparent_28%),linear-gradient(135deg,rgba(15,23,42,0.05),rgba(15,23,42,0.46))"></div>
-      <div class="absolute inset-0 flex items-center justify-center px-5 text-center">
-        <div class="rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 shadow-2xl backdrop-blur-sm">
-          <p class="text-[10px] font-black uppercase tracking-[0.26em] text-cyan-200">{resource.type === 'prompt' ? 'Preview Style' : 'Template Mood'}</p>
-          <p class="mt-1 line-clamp-2 text-lg font-black leading-tight text-white drop-shadow">{resource.title.replace('AI Photo Editing Prompt', '').replace('CapCut Template', '')}</p>
+    {visualVariant === 'clean' ? (
+      <div class="relative aspect-[16/10] overflow-hidden bg-slate-900" data-clean-preview>
+        <img
+          src={resource.image}
+          alt={resource.imageAlt}
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="675"
+          class="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.03]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/62 via-slate-950/14 to-transparent"></div>
+        <div class="absolute left-3 top-3 rounded-full border border-white/15 bg-slate-950/70 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-cyan-100 backdrop-blur">
+          {resource.badge ?? 'Free'}
+        </div>
+        <div class="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-3">
+          <p class="max-w-[78%] text-lg font-black leading-tight text-white drop-shadow">{shortTitle}</p>
+          <span class="rounded-full border border-white/15 bg-white/10 px-2.5 py-1 text-[10px] font-bold text-slate-100 backdrop-blur">AI</span>
         </div>
       </div>
-      <div class="absolute left-3 top-3 rounded-full bg-cyan-300 px-3 py-1 text-xs font-black uppercase tracking-wide text-slate-950 shadow-lg shadow-cyan-950/30">
-        {resource.badge ?? 'Free'}
-      </div>
-      <div class="absolute right-3 top-3 rounded-full border border-white/20 bg-slate-950/75 px-3 py-1 text-xs font-bold text-white backdrop-blur">
-        {resource.type === 'prompt' ? 'AI Prompt' : 'CapCut'}
-      </div>
-      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-transparent p-4">
-        <div class="flex flex-wrap gap-2">
-          {resource.tags.slice(0, 3).map((tag: string) => <span class="badge border-white/15 bg-slate-950/55 text-cyan-100">{tag}</span>)}
+    ) : (
+      <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+        <img
+          src={resource.image}
+          alt={resource.imageAlt}
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="675"
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.20),transparent_34%),radial-gradient(circle_at_85%_15%,rgba(168,85,247,0.22),transparent_28%),linear-gradient(135deg,rgba(15,23,42,0.05),rgba(15,23,42,0.46))"></div>
+        <div class="absolute inset-0 flex items-center justify-center px-5 text-center">
+          <div class="rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 shadow-2xl backdrop-blur-sm">
+            <p class="text-[10px] font-black uppercase tracking-[0.26em] text-cyan-200">{resource.type === 'prompt' ? 'Preview Style' : 'Template Mood'}</p>
+            <p class="mt-1 line-clamp-2 text-lg font-black leading-tight text-white drop-shadow">{shortTitle}</p>
+          </div>
+        </div>
+        <div class="absolute left-3 top-3 rounded-full bg-cyan-300 px-3 py-1 text-xs font-black uppercase tracking-wide text-slate-950 shadow-lg shadow-cyan-950/30">
+          {resource.badge ?? 'Free'}
+        </div>
+        <div class="absolute right-3 top-3 rounded-full border border-white/20 bg-slate-950/75 px-3 py-1 text-xs font-bold text-white backdrop-blur">
+          {resource.type === 'prompt' ? 'AI Prompt' : 'CapCut'}
+        </div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-transparent p-4">
+          <div class="flex flex-wrap gap-2">
+            {resource.tags.slice(0, 3).map((tag: string) => <span class="badge border-white/15 bg-slate-950/55 text-cyan-100">{tag}</span>)}
+          </div>
         </div>
       </div>
-    </div>
+    )}
   </a>
   <div class="p-5">
     <a href={href}><h3 class="text-xl font-black leading-tight text-white transition group-hover:text-cyan-100">{resource.title}</h3></a>
     <p class="mt-3 line-clamp-3 text-sm leading-6 text-slate-300">{resource.description}</p>
+    {visualVariant === 'clean' && <div class="mt-4 flex flex-wrap gap-2">{resource.tags.slice(0, 2).map((tag: string) => <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-300">{tag}</span>)}</div>}
     <div class="my-4 flex flex-wrap gap-2 text-xs text-slate-400">
       <span>{resource.type === 'prompt' ? resource.tool : `${resource.duration} • ${resource.assetsNeeded}`}</span>
       <span>•</span>

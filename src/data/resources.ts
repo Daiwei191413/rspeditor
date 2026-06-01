@@ -6,6 +6,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "cinematic-sunset-boy",
+    "image": "/images/photos/cinematic-sunset-boy.webp",
+    "imageAlt": "Cinematic portrait style inspiration photo for sunset boy AI editing prompt",
     "title": "Cinematic Sunset Boy AI Photo Editing Prompt",
     "description": "Create a warm cinematic sunset portrait for Instagram DP and Reels covers.",
     "tags": [
@@ -26,6 +28,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "cinematic-sunset-girl",
+    "image": "/images/photos/cinematic-sunset-girl.webp",
+    "imageAlt": "Golden hour portrait style inspiration photo for sunset girl AI editing prompt",
     "title": "Cinematic Sunset Girl AI Photo Editing Prompt",
     "description": "Turn a simple selfie into a soft golden hour cinematic portrait.",
     "tags": [
@@ -45,6 +49,8 @@ const rawResources = [
   {
     "type": "prompt",
     "slug": "lofi-dusk-filter",
+    "image": "/images/photos/lofi-dusk-filter.webp",
+    "imageAlt": "Lofi dusk landscape mood inspiration photo for AI editing prompt",
     "title": "Lofi Dusk Filter AI Photo Editing Prompt",
     "description": "Generate the popular glowing lofi dusk filter look for social posts.",
     "tags": [
@@ -1599,6 +1605,43 @@ function withEditorialMetadata(item: Resource): Resource {
 export const resources = rawResources.map(withEditorialMetadata);
 export const prompts = resources.filter((item) => item.type === 'prompt');
 export const capcuts = resources.filter((item) => item.type === 'capcut');
+
+export const featuredPromptSlugs = [
+  'cinematic-sunset-boy',
+  'cinematic-sunset-girl',
+  'lofi-dusk-filter',
+  'cute-couple',
+  'cricket-stadium',
+  'birthday-poster',
+  'attitude-boy',
+  'attitude-girl',
+  'bike-rider',
+  'gym-boy',
+  'wedding-couple',
+  'anime-portrait',
+  'studio-headshot'
+];
+
+export const featuredCapcutSlugs = [
+  'hindi-song-beat-sync',
+  'punjabi-song-reels',
+  'love-beat-sync',
+  'attitude-reels',
+  'birthday-video',
+  'photo-beat-sync',
+  'slow-motion',
+  'sad-song',
+  'friendship',
+  'couple-template',
+  'travel-reels',
+  'cricket-fan',
+  'bike-rider-template'
+];
+
+const bySlug = (items: Resource[], slugs: string[]) => slugs.map((slug) => items.find((item) => item.slug === slug)).filter(Boolean) as Resource[];
+
+export const featuredPrompts = bySlug(prompts, featuredPromptSlugs);
+export const featuredCapcuts = bySlug(capcuts, featuredCapcutSlugs);
 export const allTags = Array.from(new Set(resources.flatMap((item) => item.tags))).sort();
 export const getBySlug = (type: Resource['type'], slug: string) => resources.find((item) => item.type === type && item.slug === slug);
 export const getRelated = (resource: Resource, limit = 6) => resources.filter((item) => item.slug !== resource.slug && item.tags.some((tag) => resource.tags.includes(tag))).slice(0, limit);

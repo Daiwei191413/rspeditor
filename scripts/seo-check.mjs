@@ -28,6 +28,10 @@ function assertHasSchema(markup, type, page) {
   assert.ok(docs.some((doc) => doc['@type'] === type), `${page} should include ${type} schema`);
 }
 
+function countResourceCards(markup) {
+  return (markup.match(/data-pagefind-ignore/g) ?? []).length;
+}
+
 const home = html('');
 assertHasSchema(home, 'WebSite', 'home');
 assertHasSchema(home, 'Organization', 'home');
@@ -40,9 +44,24 @@ assert.match(home, /Updated weekly/i, 'hero should show freshness trust note');
 assert.match(home, /data-toast/i, 'home should include a global toast region');
 assert.match(home, /Trending/i, 'home should expose discovery badges');
 assert.match(home, /overflow-x-auto/i, 'home tags should support horizontal scrolling on mobile');
+assert.match(home, /data-visual-variant="clean"/i, 'first three prompt cards should opt into clean visual pilot');
+assert.match(home, /data-clean-preview/i, 'clean prompt cards should render simplified preview treatment');
+assert.equal(countResourceCards(home), 12, 'home should stay focused with 6 prompt cards and 6 CapCut cards');
+
+const promptListing = html('ai-photo-editing-prompts');
+assert.equal(countResourceCards(promptListing), 13, 'AI Prompts listing should show 13 curated popular prompts');
+assert.match(promptListing, /Showing 13 popular prompts/i, 'AI Prompts listing should explain curated scope');
+assert.match(promptListing, /Studio Headshot AI Photo Editing Prompt/i, 'AI Prompts listing should include selected 13th prompt');
+assert.doesNotMatch(promptListing, /Double Exposure Travel AI Photo Editing Prompt/i, 'AI Prompts listing should hide non-curated prompt cards for now');
+
+const capcutListing = html('capcut-templates');
+assert.equal(countResourceCards(capcutListing), 13, 'CapCut listing should show 13 curated popular templates');
+assert.match(capcutListing, /Showing 13 popular templates/i, 'CapCut listing should explain curated scope');
+assert.match(capcutListing, /Bike Rider CapCut Template/i, 'CapCut listing should include selected 13th template');
+assert.doesNotMatch(capcutListing, /Lyrics Reaction CapCut Template/i, 'CapCut listing should hide non-curated templates for now');
 
 const promptPage = html('ai-photo-editing-prompts/cinematic-sunset-boy');
-assert.match(promptPage, /<img[^>]+alt="Cinematic Sunset Boy AI Photo Editing Prompt preview"/i, 'prompt detail should render preview image with descriptive alt');
+assert.match(promptPage, /<img[^>]+alt="Cinematic portrait style inspiration photo for sunset boy AI editing prompt"/i, 'prompt detail should render preview image with descriptive alt');
 assert.match(promptPage, /By RSP Editor Team/i, 'prompt detail should show author');
 assert.match(promptPage, /Updated/i, 'prompt detail should show updated date');
 assertHasSchema(promptPage, 'Article', 'prompt detail');
