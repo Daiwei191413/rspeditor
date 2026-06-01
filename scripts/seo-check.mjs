@@ -32,6 +32,14 @@ const home = html('');
 assertHasSchema(home, 'WebSite', 'home');
 assertHasSchema(home, 'Organization', 'home');
 assert.match(home, /<img[^>]+alt="[^"]+"/i, 'home should render at least one optimized visual image');
+assert.match(home, /Browse AI Prompts/i, 'hero should offer a primary prompt browsing CTA');
+assert.match(home, /Explore CapCut Templates/i, 'hero should offer a CapCut CTA');
+assert.match(home, /Free to copy/i, 'hero should show free-to-copy trust note');
+assert.match(home, /No login required/i, 'hero should show no-login trust note');
+assert.match(home, /Updated weekly/i, 'hero should show freshness trust note');
+assert.match(home, /data-toast/i, 'home should include a global toast region');
+assert.match(home, /Trending/i, 'home should expose discovery badges');
+assert.match(home, /overflow-x-auto/i, 'home tags should support horizontal scrolling on mobile');
 
 const promptPage = html('ai-photo-editing-prompts/cinematic-sunset-boy');
 assert.match(promptPage, /<img[^>]+alt="Cinematic Sunset Boy AI Photo Editing Prompt preview"/i, 'prompt detail should render preview image with descriptive alt');

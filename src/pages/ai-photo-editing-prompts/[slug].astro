@@ -11,7 +11,7 @@ const related = getRelated(resource, 6);
 const title = `${resource.title} - Copy Free | RSP Editor`;
 const description = `${resource.description} Copy this free AI photo editing prompt for ${resource.bestFor.join(', ')}.`;
 const pageUrl = `https://rspeditor.com/ai-photo-editing-prompts/${resource.slug}/`;
-const imageUrl = new URL(resource.ogImage ?? resource.image, 'https://rspeditor.com').toString();
+const imageUrl = new URL(resource.ogImage ?? resource.image ?? '/og-default.svg', 'https://rspeditor.com').toString();
 const schema = [
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rspeditor.com/' },

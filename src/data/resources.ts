@@ -1,6 +1,6 @@
 export type Resource =
-  | { type: 'prompt'; slug: string; title: string; description: string; tags: string[]; tool: string; bestFor: string[]; prompt: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string }
-  | { type: 'capcut'; slug: string; title: string; description: string; tags: string[]; duration: string; assetsNeeded: string; bestFor: string[]; templateUrl: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string };
+  | { type: 'prompt'; slug: string; title: string; description: string; tags: string[]; tool: string; bestFor: string[]; prompt: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string; badge?: 'New' | 'Trending' | 'Popular' | 'Free' }
+  | { type: 'capcut'; slug: string; title: string; description: string; tags: string[]; duration: string; assetsNeeded: string; bestFor: string[]; templateUrl: string; image?: string; imageAlt?: string; ogImage?: string; author?: string; datePublished?: string; dateModified?: string; badge?: 'New' | 'Trending' | 'Popular' | 'Free' };
 
 const rawResources = [
   {
@@ -1574,6 +1574,13 @@ function pickCapcutVisual(item: Resource) {
   return 'photo-beat-sync-2026';
 }
 
+function pickBadge(item: Resource) {
+  if (item.tags.includes('trending') || item.tags.includes('viral') || item.tags.includes('beat-sync')) return 'Trending';
+  if (item.tags.includes('birthday') || item.tags.includes('cricket') || item.tags.includes('hindi-song')) return 'Popular';
+  if (item.slug.includes('2026')) return 'New';
+  return 'Free';
+}
+
 function withEditorialMetadata(item: Resource): Resource {
   const visual = item.type === 'prompt' ? pickPromptVisual(item) : pickCapcutVisual(item);
   const folder = item.type === 'prompt' ? 'prompts' : 'capcut';
@@ -1584,7 +1591,8 @@ function withEditorialMetadata(item: Resource): Resource {
     ogImage: item.ogImage ?? `/images/${folder}/${visual}.svg`,
     author: item.author ?? AUTHOR,
     datePublished: item.datePublished ?? DATE_PUBLISHED,
-    dateModified: item.dateModified ?? DATE_MODIFIED
+    dateModified: item.dateModified ?? DATE_MODIFIED,
+    badge: item.badge ?? pickBadge(item)
   };
 }
 

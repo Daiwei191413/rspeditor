@@ -41,7 +41,7 @@ const imageUrl = new URL(image, Astro.site ?? 'https://rspeditor.com').toString(
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={imageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
-    {allSchema.length > 0 && <script type="application/ld+json" set:html={JSON.stringify(allSchema)} />}
+    {allSchema.length > 0 && <script is:inline type="application/ld+json" set:html={JSON.stringify(allSchema)} />}
   </head>
   <body>
     <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur">
@@ -62,6 +62,7 @@ const imageUrl = new URL(image, Astro.site ?? 'https://rspeditor.com').toString(
     <main data-pagefind-body>
       <slot />
     </main>
+    <div data-toast class="pointer-events-none fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 rounded-full border border-cyan-300/30 bg-slate-950/95 px-5 py-3 text-sm font-bold text-cyan-100 opacity-0 shadow-2xl shadow-cyan-950/40 transition duration-300" role="status" aria-live="polite">Prompt copied to clipboard</div>
     <footer class="mt-20 border-t border-white/10 py-10 text-sm text-slate-400">
       <div class="container grid gap-8 md:grid-cols-4">
         <div>
@@ -82,6 +83,17 @@ const imageUrl = new URL(image, Astro.site ?? 'https://rspeditor.com').toString(
         await navigator.clipboard.writeText(target.textContent.trim());
         const old = btn.textContent;
         btn.textContent = 'Copied!';
+        const toast = document.querySelector('[data-toast]');
+        if (toast) {
+          toast.textContent = 'Prompt copied to clipboard';
+          toast.classList.remove('opacity-0');
+          toast.classList.add('opacity-100');
+          clearTimeout(window.__rspToastTimer);
+          window.__rspToastTimer = setTimeout(() => {
+            toast.classList.add('opacity-0');
+            toast.classList.remove('opacity-100');
+          }, 1800);
+        }
         setTimeout(() => (btn.textContent = old), 1500);
       });
     </script>
