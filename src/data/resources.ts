@@ -395,7 +395,7 @@ const rawResources = [
     "type": "prompt",
     "slug": "neon-cyberpunk-portrait",
     "image": "/images/photos/neon-cyberpunk.webp",
-    "imageAlt": "Retro neon cyberpunk tech setup with cyan and magenta lighting",
+    "imageAlt": "Neon cyberpunk portrait preview with cyan and magenta city lighting",
     "title": "Neon Cyberpunk AI Photo Editing Prompt",
     "description": "Transform your portrait into a futuristic cyberpunk scene with neon lighting.",
     "tags": [
@@ -1263,7 +1263,7 @@ const rawResources = [
     "type": "capcut",
     "slug": "tech-intro",
     "image": "/images/photos/capcut-tech-intro.webp",
-    "imageAlt": "Matrix-style green digital code rain for tech intro template",
+    "imageAlt": "Futuristic blue AI logo reveal preview for tech intro template",
     "title": "Tech Intro CapCut Template",
     "description": "Futuristic tech intro with glitch transitions and digital rain effects.",
     "tags": [
