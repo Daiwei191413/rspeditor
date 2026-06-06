@@ -294,14 +294,16 @@ const rawResources = [
   },
   {
     "type": "prompt",
-    "slug": "attitude-girl",
-    "image": "/images/photos/attitude-girl.webp",
-    "imageAlt": "Confident female portrait style inspiration for AI photo editing",
-    "title": "Attitude Girl AI Photo Editing Prompt",
-    "description": "Create a confident attitude girl portrait for profile photos.",
+    "slug": "spring-bougainvillea-portrait",
+    "image": "/images/photos/spring-bougainvillea-portrait.webp",
+    "imageAlt": "Smiling woman in a white lace dress holding a pink rose beside blooming spring bougainvillea on a sunlit street",
+    "imagePosition": "center 35%",
+    "title": "Spring Bougainvillea Portrait AI Photo Editing Prompt",
+    "description": "Transform a portrait into a warm spring flower-wall photo with bougainvillea, soft sunlight, and natural facial identity preservation.",
     "tags": [
-      "attitude",
-      "girl",
+      "spring",
+      "flower-portrait",
+      "bougainvillea",
       "profile-photo"
     ],
     "tool": "ChatGPT / Gemini",
@@ -310,7 +312,7 @@ const rawResources = [
       "Reels cover",
       "WhatsApp status"
     ],
-    "prompt": "Edit my uploaded photo into a attitude girl style image. Keep my face identity realistic and natural. Use cinematic mobile-friendly lighting, sharp facial details, clean background separation, realistic skin texture, and social-media-ready composition. Make it suitable for Instagram DP, Reels cover, YouTube Shorts thumbnail, and WhatsApp status. Avoid changing my facial features too much. Output a high-resolution vertical 4:5 portrait."
+    "prompt": "Transform the uploaded portrait into a sweet and airy springtime photo while preserving the person's facial identity, facial features, and natural expression. The person is standing beside a bougainvillea-covered wall, with a sunlit street on the right side and softly blurred trees in the background. Style the scene with fuchsia, pink, and white bougainvillea flowers, warm sunlight, soft natural lighting, subtle rim light, shallow depth of field, warm film-like color grading, and a gentle pastoral spring atmosphere. The subject wears a white lace camisole dress with a loose white shirt, an off-white woven headband, small gold round earrings, and a delicate chain necklace, gently holding a pink rose near the face. Create a realistic high-quality vertical portrait with cinematic composition and natural skin texture."
   },
   {
     "type": "prompt",
@@ -1705,7 +1707,7 @@ export const featuredPromptSlugs = [
   'cricket-stadium',
   'birthday-poster',
   'attitude-boy',
-  'attitude-girl',
+  'spring-bougainvillea-portrait',
   'bike-rider',
   'gym-boy',
   'wedding-couple',
