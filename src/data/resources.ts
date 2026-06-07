@@ -531,7 +531,7 @@ const rawResources = [
     "slug": "luxury-pool-fashion-portrait",
     "image": "/images/photos/luxury-pool-fashion-portrait.webp",
     "imageAlt": "Young blonde woman in a white one-shoulder dress standing in a bright swimming pool with soft blurred lounge chairs in the background",
-    "imagePosition": "center 35%",
+    "imagePosition": "center top",
     "title": "Luxury Pool Fashion Portrait AI Photo Editing Prompt",
     "description": "Create a photorealistic luxury pool fashion portrait with soft natural light, turquoise water, and magazine-style editorial detail.",
     "tags": [
