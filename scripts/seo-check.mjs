@@ -51,6 +51,13 @@ assert.equal(countResourceCards(home), 12, 'home should stay focused with 6 prom
 const promptListing = html('ai-photo-editing-prompts');
 assert.equal(countResourceCards(promptListing), 16, 'AI Prompts listing should show 16 curated popular prompts');
 assert.match(promptListing, /Showing 16 popular prompts/i, 'AI Prompts listing should explain curated scope');
+const topPromptOrder = [
+  'Spring Bougainvillea Portrait AI Photo Editing Prompt',
+  'Luxury Pool Fashion Portrait AI Photo Editing Prompt',
+  'Coastal Charm Fox Spirit Magazine Cover AI Photo Editing Prompt'
+].map((title) => promptListing.indexOf(title));
+assert.deepEqual([...topPromptOrder].sort((a, b) => a - b), topPromptOrder, 'AI Prompts listing should place requested cards first in order');
+assert.ok(topPromptOrder.every((index) => index >= 0), 'AI Prompts listing should include requested top prompt cards');
 assert.match(promptListing, /Coastal Charm Fox Spirit Magazine Cover AI Photo Editing Prompt/i, 'AI Prompts listing should include selected 16th prompt');
 assert.doesNotMatch(promptListing, /Double Exposure Travel AI Photo Editing Prompt/i, 'AI Prompts listing should hide non-curated prompt cards for now');
 

@@ -1744,6 +1744,9 @@ export const prompts = resources.filter((item) => item.type === 'prompt');
 export const capcuts = resources.filter((item) => item.type === 'capcut');
 
 export const featuredPromptSlugs = [
+  'spring-bougainvillea-portrait',
+  'luxury-pool-fashion-portrait',
+  'coastal-charm-fox-spirit-cover',
   'cinematic-sunset-boy',
   'cinematic-sunset-girl',
   'lofi-dusk-filter',
@@ -1751,15 +1754,12 @@ export const featuredPromptSlugs = [
   'cricket-stadium',
   'birthday-poster',
   'attitude-boy',
-  'spring-bougainvillea-portrait',
   'bike-rider',
   'gym-boy',
   'wedding-couple',
   'neon-cyberpunk-portrait',
   'anime-portrait',
-  'studio-headshot',
-  'luxury-pool-fashion-portrait',
-  'coastal-charm-fox-spirit-cover'
+  'studio-headshot'
 ];
 
 export const featuredCapcutSlugs = [
