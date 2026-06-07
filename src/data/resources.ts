@@ -572,6 +572,28 @@ const rawResources = [
   },
   {
     "type": "prompt",
+    "slug": "studio-fashion-denim-portrait",
+    "image": "/images/photos/studio-fashion-denim-portrait.webp",
+    "imageAlt": "Young woman in a black crop top and high-waisted denim shorts posing against a soft blue lavender studio background",
+    "imagePosition": "center top",
+    "title": "Studio Fashion Denim Portrait AI Photo Editing Prompt",
+    "description": "Create an ultra-realistic full-body studio fashion portrait with a black crop top, denim shorts, soft beauty lighting, and pastel blue-gray backdrop.",
+    "tags": [
+      "studio",
+      "fashion",
+      "portrait",
+      "photorealistic"
+    ],
+    "tool": "ChatGPT / Gemini",
+    "bestFor": [
+      "Fashion portrait",
+      "Instagram DP",
+      "Model portfolio"
+    ],
+    "prompt": "Transform the uploaded portrait into an ultra-realistic full-body studio fashion photograph while preserving the person's facial identity, facial features, skin tone, and natural expression. Create a beautiful young woman standing confidently and looking directly at the camera, with smooth fair skin, refined delicate facial features, large expressive eyes, soft pink lips, long light-brown wavy hair falling naturally, and natural elegant makeup that feels polished but not heavy. Outfit: black spaghetti-strap cropped camisole top and high-waisted light blue denim shorts with natural frayed hems, casual fashionable summer styling. Body styling should look slim, balanced, natural, and proportionate, with relaxed confident posture, one hand tucked into the shorts pocket and the other arm resting naturally. Use a professional studio setup with a clean blue-gray pastel gradient background, soft diffused beauty lighting, commercial advertising quality, shallow depth of field, realistic skin texture, natural hair strand detail, accurate focus, HDR high dynamic range, 85mm professional portrait lens look, f/2.0 aperture, sharp face and outfit details, natural skin color, high-resolution photorealistic 8K fashion magazine quality, luxury catalog photography style."
+  },
+  {
+    "type": "prompt",
     "slug": "cinematic-sunset-boy-v2",
     "title": "Cinematic Sunset Boy Viral AI Photo Editing Prompt",
     "description": "Create a warm cinematic sunset portrait for Instagram DP and Reels covers. Includes sharper mobile-friendly details.",
@@ -1748,7 +1770,7 @@ export const featuredPromptSlugs = [
   'luxury-pool-fashion-portrait',
   'coastal-charm-fox-spirit-cover',
   'cinematic-sunset-boy',
-  'cinematic-sunset-girl',
+  'studio-fashion-denim-portrait',
   'lofi-dusk-filter',
   'cute-couple',
   'cricket-stadium',

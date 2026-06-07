@@ -58,6 +58,12 @@ const topPromptOrder = [
 ].map((title) => promptListing.indexOf(title));
 assert.deepEqual([...topPromptOrder].sort((a, b) => a - b), topPromptOrder, 'AI Prompts listing should place requested cards first in order');
 assert.ok(topPromptOrder.every((index) => index >= 0), 'AI Prompts listing should include requested top prompt cards');
+assert.match(promptListing, /Studio Fashion Denim Portrait AI Photo Editing Prompt/i, 'AI Prompts listing should include replacement 5th prompt');
+assert.ok(
+  promptListing.indexOf('Studio Fashion Denim Portrait AI Photo Editing Prompt') > promptListing.indexOf('Cinematic Sunset Boy AI Photo Editing Prompt') &&
+    promptListing.indexOf('Studio Fashion Denim Portrait AI Photo Editing Prompt') < promptListing.indexOf('Lofi Dusk Filter AI Photo Editing Prompt'),
+  'AI Prompts listing should place studio fashion denim portrait as the 5th card'
+);
 assert.match(promptListing, /Coastal Charm Fox Spirit Magazine Cover AI Photo Editing Prompt/i, 'AI Prompts listing should include selected 16th prompt');
 assert.doesNotMatch(promptListing, /Double Exposure Travel AI Photo Editing Prompt/i, 'AI Prompts listing should hide non-curated prompt cards for now');
 
