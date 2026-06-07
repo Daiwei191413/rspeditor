@@ -528,6 +528,28 @@ const rawResources = [
   },
   {
     "type": "prompt",
+    "slug": "luxury-pool-fashion-portrait",
+    "image": "/images/photos/luxury-pool-fashion-portrait.webp",
+    "imageAlt": "Young blonde woman in a white one-shoulder dress standing in a bright swimming pool with soft blurred lounge chairs in the background",
+    "imagePosition": "center 35%",
+    "title": "Luxury Pool Fashion Portrait AI Photo Editing Prompt",
+    "description": "Create a photorealistic luxury pool fashion portrait with soft natural light, turquoise water, and magazine-style editorial detail.",
+    "tags": [
+      "pool",
+      "fashion",
+      "portrait",
+      "photorealistic"
+    ],
+    "tool": "ChatGPT / Gemini",
+    "bestFor": [
+      "Instagram DP",
+      "Reels cover",
+      "Fashion portrait"
+    ],
+    "prompt": "Transform the uploaded portrait into an ultra-realistic luxury pool fashion photograph while preserving the person's facial identity, facial features, skin tone, and natural expression. The subject is standing in clear turquoise swimming pool water with the water level around the waist, creating soft ripples and natural light reflections. Style the subject with fair porcelain-like skin, refined dimensional facial features, bright light-colored eyes, soft natural makeup, and an elegant calm expression looking directly at the camera. Create blonde hair tied high in a ponytail with soft airy bangs, with both arms raised above the head as if adjusting the hair. Outfit: a white ruched fitted mini dress with a one-shoulder design, realistic wet fabric texture, delicate folds, natural drape, and a three-dimensional fabric flower detail on the chest. Environment: a luxury indoor pool with softly blurred lounge chairs in the background, shallow depth of field, creamy bokeh, cinematic natural lighting, subtle volumetric light, high-end fashion magazine editorial style. Use realistic skin texture, lifelike eyes, detailed fabric wrinkles, professional 85mm portrait lens look, f/1.8 aperture, sharp focus on the face, HDR, high dynamic range, photorealistic 8K-quality vertical portrait, fashion magazine cover quality."
+  },
+  {
+    "type": "prompt",
     "slug": "cinematic-sunset-boy-v2",
     "title": "Cinematic Sunset Boy Viral AI Photo Editing Prompt",
     "description": "Create a warm cinematic sunset portrait for Instagram DP and Reels covers. Includes sharper mobile-friendly details.",
@@ -1713,7 +1735,8 @@ export const featuredPromptSlugs = [
   'wedding-couple',
   'neon-cyberpunk-portrait',
   'anime-portrait',
-  'studio-headshot'
+  'studio-headshot',
+  'luxury-pool-fashion-portrait'
 ];
 
 export const featuredCapcutSlugs = [
