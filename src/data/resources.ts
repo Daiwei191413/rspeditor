@@ -597,7 +597,7 @@ const rawResources = [
     "slug": "indian-bindi-indoor-portrait",
     "image": "/images/photos/indian-bindi-indoor-portrait.webp",
     "imageAlt": "Close-up portrait of a young South Asian woman with a small black bindi, messy bun, white shirt, blue camisole, and wired earphones against a warm tan background",
-    "imagePosition": "center 35%",
+    "imagePosition": "center top",
     "title": "Indian Bindi Indoor Portrait AI Photo Editing Prompt",
     "description": "Create a warm hyper-realistic indoor beauty portrait with a small black bindi, messy bun, soft golden light, and casual white shirt styling.",
     "tags": [
