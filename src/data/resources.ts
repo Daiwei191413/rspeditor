@@ -594,6 +594,28 @@ const rawResources = [
   },
   {
     "type": "prompt",
+    "slug": "indian-bindi-indoor-portrait",
+    "image": "/images/photos/indian-bindi-indoor-portrait.webp",
+    "imageAlt": "Close-up portrait of a young South Asian woman with a small black bindi, messy bun, white shirt, blue camisole, and wired earphones against a warm tan background",
+    "imagePosition": "center 35%",
+    "title": "Indian Bindi Indoor Portrait AI Photo Editing Prompt",
+    "description": "Create a warm hyper-realistic indoor beauty portrait with a small black bindi, messy bun, soft golden light, and casual white shirt styling.",
+    "tags": [
+      "india",
+      "portrait",
+      "photorealistic",
+      "lifestyle"
+    ],
+    "tool": "ChatGPT / Gemini",
+    "bestFor": [
+      "Instagram DP",
+      "Beauty portrait",
+      "Influencer profile"
+    ],
+    "prompt": "Transform the uploaded portrait into a hyper-realistic close-up head-and-shoulders portrait while preserving the person's facial identity, facial features, skin tone, and natural expression. Create a beautiful young Indian woman with large expressive brown eyes, naturally thick eyebrows, warm healthy flawless brown skin, a small black bindi centered on the forehead, soft natural makeup, and gentle pink lips. Style the hair as a slightly messy high bun with a few loose strands falling naturally along both sides of the face to frame the features. Pose the subject with both hands raised while adjusting her hair, looking directly into the camera with a calm, confident, charming expression. Outfit: light blue spaghetti-strap camisole layered under a loose white shirt that slips naturally off the shoulders, relaxed casual styling, with white wired earphones hanging naturally around the neck. Environment: warm comfortable indoor room with a beige background, soft golden ambient lighting, cozy atmosphere, shallow depth of field, creamy bokeh, cinematic portrait photography style. Use professional beauty photography lighting, highly realistic skin texture, fine eyelash detail, natural dimensional facial features, ultra-detailed eyes, precise focus locked on the face, photorealistic quality, HDR high dynamic range, masterwork quality, 8K ultra-high resolution, Sony A7R V camera look, 85mm professional portrait lens, f/1.8 aperture, natural realistic color grading, international fashion magazine portrait quality, social media influencer style, high-end portrait photography finish."
+  },
+  {
+    "type": "prompt",
     "slug": "cinematic-sunset-boy-v2",
     "title": "Cinematic Sunset Boy Viral AI Photo Editing Prompt",
     "description": "Create a warm cinematic sunset portrait for Instagram DP and Reels covers. Includes sharper mobile-friendly details.",
@@ -1781,7 +1803,7 @@ export const featuredPromptSlugs = [
   'wedding-couple',
   'neon-cyberpunk-portrait',
   'anime-portrait',
-  'studio-headshot'
+  'indian-bindi-indoor-portrait'
 ];
 
 export const featuredCapcutSlugs = [

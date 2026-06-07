@@ -64,7 +64,11 @@ assert.ok(
     promptListing.indexOf('Studio Fashion Denim Portrait AI Photo Editing Prompt') < promptListing.indexOf('Lofi Dusk Filter AI Photo Editing Prompt'),
   'AI Prompts listing should place studio fashion denim portrait as the 5th card'
 );
-assert.match(promptListing, /Coastal Charm Fox Spirit Magazine Cover AI Photo Editing Prompt/i, 'AI Prompts listing should include selected 16th prompt');
+assert.match(promptListing, /Indian Bindi Indoor Portrait AI Photo Editing Prompt/i, 'AI Prompts listing should include replacement 16th prompt');
+assert.ok(
+  promptListing.indexOf('Indian Bindi Indoor Portrait AI Photo Editing Prompt') > promptListing.indexOf('Anime Portrait AI Photo Editing Prompt'),
+  'AI Prompts listing should place Indian bindi indoor portrait as the final curated card'
+);
 assert.doesNotMatch(promptListing, /Double Exposure Travel AI Photo Editing Prompt/i, 'AI Prompts listing should hide non-curated prompt cards for now');
 
 const capcutListing = html('capcut-templates');
