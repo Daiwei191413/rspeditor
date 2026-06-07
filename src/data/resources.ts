@@ -550,6 +550,28 @@ const rawResources = [
   },
   {
     "type": "prompt",
+    "slug": "coastal-charm-fox-spirit-cover",
+    "image": "/images/photos/coastal-charm-fox-spirit-cover.webp",
+    "imageAlt": "Fantasy Coastal Charm magazine cover featuring a red-haired fox spirit woman posing in tropical water at sunset with summer editorial cover text",
+    "imagePosition": "center 25%",
+    "title": "Coastal Charm Fox Spirit Magazine Cover AI Photo Editing Prompt",
+    "description": "Create a glossy fantasy fashion magazine cover with coastal sunset lighting, fox-spirit character styling, swimwear editorial text, and luxury summer typography.",
+    "tags": [
+      "magazine-cover",
+      "fantasy",
+      "summer",
+      "fashion"
+    ],
+    "tool": "ChatGPT / Gemini",
+    "bestFor": [
+      "Magazine cover",
+      "Fantasy portrait",
+      "Summer editorial"
+    ],
+    "prompt": "Transform the uploaded portrait into a glossy fantasy fashion magazine cover titled COASTAL CHARM while preserving the person's facial identity, facial features, and natural expression. Create a vertical luxury editorial cover set in shallow tropical water during golden hour, with warm cinematic sunset lighting, turquoise water reflections, dark lush island greenery in the softly blurred background, and a polished high-fashion beach aesthetic. Style the subject as an elegant nine-tailed fox spirit inspired character with vivid red wet hair, soft bangs, large fox-like ears, subtle leafy and gold hair ornaments, glowing wet skin highlights, and a dramatic over-the-shoulder swimwear editorial pose. Outfit: colorful glossy bikini or luxury swimwear in red, magenta, purple, and jewel-tone accents, with realistic wet fabric shine and premium fashion styling. Add refined magazine typography: large cream serif masthead COASTAL CHARM at the top, issue details such as 2024 July and NO.78, side cover lines about SUMMER SPECIAL, ISLAND FANTASY, COVER FEATURE, BEAUTY SECRETS, and ENERGY & SENSE, plus a large bottom headline SUMMER IN HEAT. Use balanced editorial layout, readable serif typography, realistic print magazine composition, shallow depth of field, creamy bokeh, HDR, high dynamic range, ultra-detailed skin and hair texture, cinematic color grading, 8K photorealistic quality, international fashion magazine cover finish."
+  },
+  {
+    "type": "prompt",
     "slug": "cinematic-sunset-boy-v2",
     "title": "Cinematic Sunset Boy Viral AI Photo Editing Prompt",
     "description": "Create a warm cinematic sunset portrait for Instagram DP and Reels covers. Includes sharper mobile-friendly details.",
@@ -1736,7 +1758,8 @@ export const featuredPromptSlugs = [
   'neon-cyberpunk-portrait',
   'anime-portrait',
   'studio-headshot',
-  'luxury-pool-fashion-portrait'
+  'luxury-pool-fashion-portrait',
+  'coastal-charm-fox-spirit-cover'
 ];
 
 export const featuredCapcutSlugs = [

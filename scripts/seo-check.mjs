@@ -49,9 +49,9 @@ assert.match(home, /data-clean-preview/i, 'clean prompt cards should render simp
 assert.equal(countResourceCards(home), 12, 'home should stay focused with 6 prompt cards and 6 CapCut cards');
 
 const promptListing = html('ai-photo-editing-prompts');
-assert.equal(countResourceCards(promptListing), 15, 'AI Prompts listing should show 15 curated popular prompts');
-assert.match(promptListing, /Showing 15 popular prompts/i, 'AI Prompts listing should explain curated scope');
-assert.match(promptListing, /Luxury Pool Fashion Portrait AI Photo Editing Prompt/i, 'AI Prompts listing should include selected 15th prompt');
+assert.equal(countResourceCards(promptListing), 16, 'AI Prompts listing should show 16 curated popular prompts');
+assert.match(promptListing, /Showing 16 popular prompts/i, 'AI Prompts listing should explain curated scope');
+assert.match(promptListing, /Coastal Charm Fox Spirit Magazine Cover AI Photo Editing Prompt/i, 'AI Prompts listing should include selected 16th prompt');
 assert.doesNotMatch(promptListing, /Double Exposure Travel AI Photo Editing Prompt/i, 'AI Prompts listing should hide non-curated prompt cards for now');
 
 const capcutListing = html('capcut-templates');
