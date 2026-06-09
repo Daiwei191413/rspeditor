@@ -256,7 +256,8 @@ const rawResources = [
     "type": "prompt",
     "slug": "birthday-poster",
     "image": "/images/photos/birthday-poster.webp",
-    "imageAlt": "Birthday celebration style inspiration for AI poster editing",
+    "imageAlt": "Festive birthday poster portrait with cake, candles, balloons, confetti, and warm party lights for AI photo editing",
+    "imagePosition": "center 22%",
     "title": "Birthday Poster AI Photo Editing Prompt",
     "description": "Create a birthday poster portrait with balloons, lights, and stylish typography.",
     "tags": [
