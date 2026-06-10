@@ -595,6 +595,28 @@ const rawResources = [
   },
   {
     "type": "prompt",
+    "slug": "fashion-character-design-sheet",
+    "image": "/images/photos/fashion-character-design-sheet.webp",
+    "imageAlt": "Fashion character design sheet of a young woman with long black hair, tie dye halter top, black denim shorts, heels, and accessory breakdown notes",
+    "imagePosition": "center top",
+    "title": "Fashion Character Design Sheet AI Photo Editing Prompt",
+    "description": "Create a luxury fashion character reference sheet with full-body styling, outfit breakdowns, accessories, makeup items, and Chinese editorial notes.",
+    "tags": [
+      "fashion",
+      "character-design",
+      "reference-sheet",
+      "editorial"
+    ],
+    "tool": "ChatGPT / Gemini",
+    "bestFor": [
+      "Fashion design board",
+      "Character reference",
+      "Magazine infographic"
+    ],
+    "prompt": "Create a professional fashion character design sheet from the uploaded reference while preserving the person's facial identity, facial features, skin tone, and natural expression. Show a full-body beautiful young woman standing in a confident fashion model pose with long straight black hair, elegant facial features, warm skin tone, realistic anatomy, slim natural proportions, and long legs. Outfit: gray-black tie dye silk halter top with a neck ribbon detail, high-waisted black denim shorts, and black patent leather stiletto heels. Present the result as a clean luxury magazine infographic and character reference board on a vintage paper background. Include a central full-body fashion illustration, multiple facial expressions, character turnaround reference, clothing component analysis, fabric texture samples, material closeups, accessory showcase, handbag contents display, lipstick, compact powder, perfume bottle, wallet, fashion accessories, makeup items, arrows, callouts, and organized Chinese labels and notes. Use professional fashion illustration quality, concept art sheet layout, editorial composition, refined spacing, readable Chinese annotations, highly detailed fabric texture, accurate clothing construction, realistic anatomy, high-end fashion design board aesthetics, premium magazine layout, soft natural lighting, clean visual hierarchy, and high-resolution polished output."
+  },
+  {
+    "type": "prompt",
     "slug": "indian-bindi-indoor-portrait",
     "image": "/images/photos/indian-bindi-indoor-portrait.webp",
     "imageAlt": "Close-up portrait of a young South Asian woman with a small black bindi, messy bun, white shirt, blue camisole, and wired earphones against a warm tan background",
@@ -1796,7 +1818,7 @@ export const featuredPromptSlugs = [
   'studio-fashion-denim-portrait',
   'lofi-dusk-filter',
   'cute-couple',
-  'cricket-stadium',
+  'fashion-character-design-sheet',
   'birthday-poster',
   'attitude-boy',
   'bike-rider',

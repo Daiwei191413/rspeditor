@@ -66,6 +66,11 @@ assert.ok(
 );
 assert.match(promptListing, /Indian Bindi Indoor Portrait AI Photo Editing Prompt/i, 'AI Prompts listing should include replacement 16th prompt');
 assert.ok(
+  promptListing.indexOf('Fashion Character Design Sheet AI Photo Editing Prompt') > promptListing.indexOf('Cute Couple AI Photo Editing Prompt') &&
+    promptListing.indexOf('Fashion Character Design Sheet AI Photo Editing Prompt') < promptListing.indexOf('Birthday Poster AI Photo Editing Prompt'),
+  'AI Prompts listing should place fashion character design sheet as the 8th card'
+);
+assert.ok(
   promptListing.indexOf('Indian Bindi Indoor Portrait AI Photo Editing Prompt') > promptListing.indexOf('Anime Portrait AI Photo Editing Prompt'),
   'AI Prompts listing should place Indian bindi indoor portrait as the final curated card'
 );
